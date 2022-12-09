@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		50128F062943C0D30040695C /* CreateDeckCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50128F052943C0D30040695C /* CreateDeckCollectionViewController.swift */; };
-		50128F082943C47A0040695C /* CreateDeckCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50128F072943C47A0040695C /* CreateDeckCollectionViewCell.swift */; };
+		50128F0A2943C9E80040695C /* DefinitionStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50128F092943C9E80040695C /* DefinitionStruct.swift */; };
+		50128F0C2943CD7B0040695C /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50128F0B2943CD7B0040695C /* CollectionViewCell.swift */; };
 		50A70D232943B71B00DC96A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A70D222943B71B00DC96A2 /* AppDelegate.swift */; };
 		50A70D252943B71B00DC96A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A70D242943B71B00DC96A2 /* SceneDelegate.swift */; };
 		50A70D272943B71B00DC96A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A70D262943B71B00DC96A2 /* ViewController.swift */; };
@@ -19,7 +20,8 @@
 
 /* Begin PBXFileReference section */
 		50128F052943C0D30040695C /* CreateDeckCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeckCollectionViewController.swift; sourceTree = "<group>"; };
-		50128F072943C47A0040695C /* CreateDeckCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeckCollectionViewCell.swift; sourceTree = "<group>"; };
+		50128F092943C9E80040695C /* DefinitionStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionStruct.swift; sourceTree = "<group>"; };
+		50128F0B2943CD7B0040695C /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		50A70D1F2943B71B00DC96A2 /* Kade-Capstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kade-Capstone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A70D222943B71B00DC96A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50A70D242943B71B00DC96A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,7 +70,8 @@
 				50A70D2D2943B71F00DC96A2 /* LaunchScreen.storyboard */,
 				50A70D302943B71F00DC96A2 /* Info.plist */,
 				50128F052943C0D30040695C /* CreateDeckCollectionViewController.swift */,
-				50128F072943C47A0040695C /* CreateDeckCollectionViewCell.swift */,
+				50128F0B2943CD7B0040695C /* CollectionViewCell.swift */,
+				50128F092943C9E80040695C /* DefinitionStruct.swift */,
 			);
 			path = "Kade-Capstone";
 			sourceTree = "<group>";
@@ -146,9 +149,10 @@
 			files = (
 				50128F062943C0D30040695C /* CreateDeckCollectionViewController.swift in Sources */,
 				50A70D272943B71B00DC96A2 /* ViewController.swift in Sources */,
-				50128F082943C47A0040695C /* CreateDeckCollectionViewCell.swift in Sources */,
+				50128F0C2943CD7B0040695C /* CollectionViewCell.swift in Sources */,
 				50A70D232943B71B00DC96A2 /* AppDelegate.swift in Sources */,
 				50A70D252943B71B00DC96A2 /* SceneDelegate.swift in Sources */,
+				50128F0A2943C9E80040695C /* DefinitionStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

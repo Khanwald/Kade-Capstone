@@ -7,9 +7,14 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "cell"
+
+var arrayOfData:[SetItem] = []
+var count = arrayOfData.count
 
 class CreateDeckCollectionViewController: UICollectionViewController {
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,10 +23,10 @@ class CreateDeckCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.register(CollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
-        
+        self.collectionView!.reloadData()
     }
     
     
@@ -40,19 +45,24 @@ class CreateDeckCollectionViewController: UICollectionViewController {
         
         // Action for alert
         // Saves text from action
-        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+        let okAction = UIAlertAction(title: "Add", style: .default) { (action) in
             // handle response here.
         
             let textField = alert.textFields![0] as UITextField
             let textFieldA = alert.textFields![1] as UITextField
         
-            guard let textA = textField.text, let textB = textFieldA.text else{return}
-            print(textA + textB)
+            guard let term = textField.text, let definition = textFieldA.text else{return}
+            
+            arrayOfData.append(SetItem(term: term, definition: definition))
+            
+            
+            
         }
         
         alert.addAction(okAction)
         
         self.present(alert, animated: true, completion: nil)
+        
 
     }
     
@@ -70,19 +80,21 @@ class CreateDeckCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
     
         // Configure the cell
+        let stru = arrayOfData[indexPath.item]
+        cell.configure(with: stru.term , with: stru.definition)
     
         return cell
     }

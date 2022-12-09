@@ -1,0 +1,26 @@
+//
+//  CollectionViewCell.swift
+//  Kade-Capstone
+//
+//  Created by 11k on 12/9/22.
+//
+
+import UIKit
+
+class CollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var definitionLabel: UILabel!
+    @IBOutlet weak var termLabel: UILabel!
+    
+    static let identifer = "cell"
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        
+    }
+    
+    public func configure(with term:String, with definition:String){
+        termLabel.text = term
+        definitionLabel.text = definition
+    }
+}
