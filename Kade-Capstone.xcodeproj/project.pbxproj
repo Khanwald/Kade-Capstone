@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		50128F062943C0D30040695C /* CreateDeckCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50128F052943C0D30040695C /* CreateDeckCollectionViewController.swift */; };
 		50128F0A2943C9E80040695C /* DefinitionStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50128F092943C9E80040695C /* DefinitionStruct.swift */; };
 		50128F0C2943CD7B0040695C /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50128F0B2943CD7B0040695C /* CollectionViewCell.swift */; };
+		50128F0E2944E24D0040695C /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50128F0D2944E24D0040695C /* CreateViewController.swift */; };
+		502B70C92945004E008EAF52 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 502B70C82945004E008EAF52 /* FirebaseAuth */; };
+		502B70CB2945004E008EAF52 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 502B70CA2945004E008EAF52 /* FirebaseDatabase */; };
+		502B70CD2945004E008EAF52 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 502B70CC2945004E008EAF52 /* FirebaseFirestore */; };
+		502B70CF2945004E008EAF52 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 502B70CE2945004E008EAF52 /* FirebaseStorage */; };
+		502B70D129450134008EAF52 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 502B70D029450132008EAF52 /* GoogleService-Info.plist */; };
 		50A70D232943B71B00DC96A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A70D222943B71B00DC96A2 /* AppDelegate.swift */; };
 		50A70D252943B71B00DC96A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A70D242943B71B00DC96A2 /* SceneDelegate.swift */; };
 		50A70D272943B71B00DC96A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A70D262943B71B00DC96A2 /* ViewController.swift */; };
@@ -19,9 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		50128F052943C0D30040695C /* CreateDeckCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeckCollectionViewController.swift; sourceTree = "<group>"; };
 		50128F092943C9E80040695C /* DefinitionStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionStruct.swift; sourceTree = "<group>"; };
 		50128F0B2943CD7B0040695C /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		50128F0D2944E24D0040695C /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
+		502B70D029450132008EAF52 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		50A70D1F2943B71B00DC96A2 /* Kade-Capstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kade-Capstone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A70D222943B71B00DC96A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50A70D242943B71B00DC96A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +43,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				502B70CB2945004E008EAF52 /* FirebaseDatabase in Frameworks */,
+				502B70CF2945004E008EAF52 /* FirebaseStorage in Frameworks */,
+				502B70C92945004E008EAF52 /* FirebaseAuth in Frameworks */,
+				502B70CD2945004E008EAF52 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,13 +75,14 @@
 				50A70D222943B71B00DC96A2 /* AppDelegate.swift */,
 				50A70D242943B71B00DC96A2 /* SceneDelegate.swift */,
 				50A70D262943B71B00DC96A2 /* ViewController.swift */,
+				50128F0D2944E24D0040695C /* CreateViewController.swift */,
 				50A70D282943B71B00DC96A2 /* Main.storyboard */,
 				50A70D2B2943B71F00DC96A2 /* Assets.xcassets */,
 				50A70D2D2943B71F00DC96A2 /* LaunchScreen.storyboard */,
 				50A70D302943B71F00DC96A2 /* Info.plist */,
-				50128F052943C0D30040695C /* CreateDeckCollectionViewController.swift */,
 				50128F0B2943CD7B0040695C /* CollectionViewCell.swift */,
 				50128F092943C9E80040695C /* DefinitionStruct.swift */,
+				502B70D029450132008EAF52 /* GoogleService-Info.plist */,
 			);
 			path = "Kade-Capstone";
 			sourceTree = "<group>";
@@ -92,6 +103,12 @@
 			dependencies = (
 			);
 			name = "Kade-Capstone";
+			packageProductDependencies = (
+				502B70C82945004E008EAF52 /* FirebaseAuth */,
+				502B70CA2945004E008EAF52 /* FirebaseDatabase */,
+				502B70CC2945004E008EAF52 /* FirebaseFirestore */,
+				502B70CE2945004E008EAF52 /* FirebaseStorage */,
+			);
 			productName = "Kade-Capstone";
 			productReference = 50A70D1F2943B71B00DC96A2 /* Kade-Capstone.app */;
 			productType = "com.apple.product-type.application";
@@ -120,6 +137,9 @@
 				Base,
 			);
 			mainGroup = 50A70D162943B71B00DC96A2;
+			packageReferences = (
+				502B70C72945004E008EAF52 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 50A70D202943B71B00DC96A2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -135,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50A70D2F2943B71F00DC96A2 /* LaunchScreen.storyboard in Resources */,
+				502B70D129450134008EAF52 /* GoogleService-Info.plist in Resources */,
 				50A70D2C2943B71F00DC96A2 /* Assets.xcassets in Resources */,
 				50A70D2A2943B71B00DC96A2 /* Main.storyboard in Resources */,
 			);
@@ -147,9 +168,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50128F062943C0D30040695C /* CreateDeckCollectionViewController.swift in Sources */,
 				50A70D272943B71B00DC96A2 /* ViewController.swift in Sources */,
 				50128F0C2943CD7B0040695C /* CollectionViewCell.swift in Sources */,
+				50128F0E2944E24D0040695C /* CreateViewController.swift in Sources */,
 				50A70D232943B71B00DC96A2 /* AppDelegate.swift in Sources */,
 				50A70D252943B71B00DC96A2 /* SceneDelegate.swift in Sources */,
 				50128F0A2943C9E80040695C /* DefinitionStruct.swift in Sources */,
@@ -368,6 +389,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		502B70C72945004E008EAF52 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		502B70C82945004E008EAF52 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 502B70C72945004E008EAF52 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		502B70CA2945004E008EAF52 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 502B70C72945004E008EAF52 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		502B70CC2945004E008EAF52 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 502B70C72945004E008EAF52 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		502B70CE2945004E008EAF52 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 502B70C72945004E008EAF52 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 50A70D172943B71B00DC96A2 /* Project object */;
 }

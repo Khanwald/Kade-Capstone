@@ -19,7 +19,9 @@ class CollectionViewCell: UICollectionViewCell {
         
     }
     
-    public func configure(with term:String, with definition:String){
+    public func configure(with term:String?, with definition:String?){
+        guard let term = term, let definition = definition else{return}
+        
         termLabel.text = term
         definitionLabel.text = definition
     }
