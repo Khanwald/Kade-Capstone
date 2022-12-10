@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		50128F0A2943C9E80040695C /* DefinitionStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50128F092943C9E80040695C /* DefinitionStruct.swift */; };
+		50128F0A2943C9E80040695C /* SetItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50128F092943C9E80040695C /* SetItem.swift */; };
 		50128F0C2943CD7B0040695C /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50128F0B2943CD7B0040695C /* CollectionViewCell.swift */; };
 		50128F0E2944E24D0040695C /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50128F0D2944E24D0040695C /* CreateViewController.swift */; };
 		502B70C92945004E008EAF52 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 502B70C82945004E008EAF52 /* FirebaseAuth */; };
 		502B70CB2945004E008EAF52 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 502B70CA2945004E008EAF52 /* FirebaseDatabase */; };
 		502B70CD2945004E008EAF52 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 502B70CC2945004E008EAF52 /* FirebaseFirestore */; };
 		502B70CF2945004E008EAF52 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 502B70CE2945004E008EAF52 /* FirebaseStorage */; };
-		502B70D129450134008EAF52 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 502B70D029450132008EAF52 /* GoogleService-Info.plist */; };
+		502B70D329451B6A008EAF52 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B70D229451B6A008EAF52 /* SignupViewController.swift */; };
+		502B70D529451D92008EAF52 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B70D429451D91008EAF52 /* User.swift */; };
+		502B70D72945302F008EAF52 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 502B70D62945302F008EAF52 /* GoogleService-Info.plist */; };
 		50A70D232943B71B00DC96A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A70D222943B71B00DC96A2 /* AppDelegate.swift */; };
 		50A70D252943B71B00DC96A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A70D242943B71B00DC96A2 /* SceneDelegate.swift */; };
 		50A70D272943B71B00DC96A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A70D262943B71B00DC96A2 /* ViewController.swift */; };
@@ -24,10 +26,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		50128F092943C9E80040695C /* DefinitionStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionStruct.swift; sourceTree = "<group>"; };
+		50128F092943C9E80040695C /* SetItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetItem.swift; sourceTree = "<group>"; };
 		50128F0B2943CD7B0040695C /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		50128F0D2944E24D0040695C /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
-		502B70D029450132008EAF52 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		502B70D229451B6A008EAF52 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		502B70D429451D91008EAF52 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		502B70D62945302F008EAF52 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		50A70D1F2943B71B00DC96A2 /* Kade-Capstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kade-Capstone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A70D222943B71B00DC96A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50A70D242943B71B00DC96A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,9 +84,11 @@
 				50A70D2B2943B71F00DC96A2 /* Assets.xcassets */,
 				50A70D2D2943B71F00DC96A2 /* LaunchScreen.storyboard */,
 				50A70D302943B71F00DC96A2 /* Info.plist */,
+				502B70D62945302F008EAF52 /* GoogleService-Info.plist */,
 				50128F0B2943CD7B0040695C /* CollectionViewCell.swift */,
-				50128F092943C9E80040695C /* DefinitionStruct.swift */,
-				502B70D029450132008EAF52 /* GoogleService-Info.plist */,
+				50128F092943C9E80040695C /* SetItem.swift */,
+				502B70D229451B6A008EAF52 /* SignupViewController.swift */,
+				502B70D429451D91008EAF52 /* User.swift */,
 			);
 			path = "Kade-Capstone";
 			sourceTree = "<group>";
@@ -155,8 +161,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				50A70D2F2943B71F00DC96A2 /* LaunchScreen.storyboard in Resources */,
-				502B70D129450134008EAF52 /* GoogleService-Info.plist in Resources */,
 				50A70D2C2943B71F00DC96A2 /* Assets.xcassets in Resources */,
+				502B70D72945302F008EAF52 /* GoogleService-Info.plist in Resources */,
 				50A70D2A2943B71B00DC96A2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -169,11 +175,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				50A70D272943B71B00DC96A2 /* ViewController.swift in Sources */,
+				502B70D329451B6A008EAF52 /* SignupViewController.swift in Sources */,
 				50128F0C2943CD7B0040695C /* CollectionViewCell.swift in Sources */,
 				50128F0E2944E24D0040695C /* CreateViewController.swift in Sources */,
+				502B70D529451D92008EAF52 /* User.swift in Sources */,
 				50A70D232943B71B00DC96A2 /* AppDelegate.swift in Sources */,
 				50A70D252943B71B00DC96A2 /* SceneDelegate.swift in Sources */,
-				50128F0A2943C9E80040695C /* DefinitionStruct.swift in Sources */,
+				50128F0A2943C9E80040695C /* SetItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

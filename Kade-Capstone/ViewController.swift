@@ -14,6 +14,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func singupButton(_ sender: Any) {
+        performSegue(withIdentifier: "signup", sender: nil)
+    }
+    
+    @IBAction func loginButton(_ sender: Any) {
+        performSegue(withIdentifier: "login", sender: nil)
+    }
 }
 

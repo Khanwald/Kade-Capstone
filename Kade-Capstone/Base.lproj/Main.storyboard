@@ -45,7 +45,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SRc-9W-tgN">
-                                <rect key="frame" x="0.0" y="114" width="393" height="663"/>
+                                <rect key="frame" x="0.0" y="158" width="393" height="619"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="x9X-z7-XES">
                                     <size key="itemSize" width="393" height="86"/>
@@ -97,7 +97,7 @@
                                 </cells>
                             </collectionView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Set Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g15-FB-USm">
-                                <rect key="frame" x="20" y="72" width="353" height="34"/>
+                                <rect key="frame" x="20" y="116" width="353" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -178,7 +178,7 @@
         <!--View Controller-->
         <scene sceneID="2ny-3J-7hD">
             <objects>
-                <viewController id="fGS-3P-CqU" customClass="ViewController" customModule="Senior_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fGS-3P-CqU" customClass="ViewController" customModule="Kade_Capstone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TbL-nc-XqH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -199,7 +199,7 @@
                                             <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="ULr-ZH-A1S" kind="show" id="b9l-Zl-kUB"/>
+                                            <action selector="loginButton:" destination="fGS-3P-CqU" eventType="touchUpInside" id="Idp-dP-6XV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwK-gH-2zE">
@@ -209,7 +209,7 @@
                                             <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="gUj-60-sNd" kind="show" id="dhF-Uu-0q4"/>
+                                            <action selector="singupButton:" destination="fGS-3P-CqU" eventType="touchUpInside" id="Crb-1d-3L7"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -243,6 +243,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="G9p-hV-w13"/>
+                    <connections>
+                        <segue destination="gUj-60-sNd" kind="show" identifier="signup" id="YAI-cl-RdF"/>
+                        <segue destination="ULr-ZH-A1S" kind="show" identifier="login" id="pTd-z2-aSf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H2w-3W-zXq" sceneMemberID="firstResponder"/>
             </objects>
@@ -251,7 +255,7 @@
         <!--Login View Controller-->
         <scene sceneID="XrY-e0-1fk">
             <objects>
-                <viewController id="ULr-ZH-A1S" customClass="LoginViewController" customModule="Senior_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ULr-ZH-A1S" customClass="LoginViewController" customModule="Kade_Capstone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RL2-He-VLt">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -288,9 +292,6 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Login">
                                             <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="loginButtonPressed:" destination="ULr-ZH-A1S" eventType="touchUpInside" id="95N-yl-Q5q"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -305,9 +306,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="CGB-zY-c1j"/>
                     <connections>
-                        <outlet property="loginButton" destination="3IX-OX-qTn" id="1fL-hs-j94"/>
-                        <outlet property="passwordTextField" destination="8dq-16-Dh8" id="ha0-zJ-S67"/>
-                        <outlet property="usernameTextField" destination="fO4-be-hWd" id="6Fk-tc-PqV"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="loginToHome" id="vqc-O6-397"/>
                     </connections>
                 </viewController>
@@ -318,7 +316,7 @@
         <!--Signup View Controller-->
         <scene sceneID="oOw-hk-7Ns">
             <objects>
-                <viewController id="gUj-60-sNd" customClass="SignupViewController" customModule="Senior_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gUj-60-sNd" customClass="SignupViewController" customModule="Kade_Capstone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7a1-a4-cp7">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -327,10 +325,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="f0P-v4-CIG">
-                                <rect key="frame" x="90" y="231.99999999999997" width="213" height="304.33333333333326"/>
+                                <rect key="frame" x="90" y="231.99999999999997" width="213" height="358.33333333333326"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hVd-vo-D9l">
-                                        <rect key="frame" x="0.0" y="0.0" width="213" height="250"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="213" height="304"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KcI-Ms-xjE">
                                                 <rect key="frame" x="0.0" y="0.0" width="213" height="34"/>
@@ -342,32 +340,37 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="akb-XV-KwL">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oYP-nW-o51">
                                                 <rect key="frame" x="0.0" y="108" width="213" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nt9-GV-xZG">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="akb-XV-KwL">
                                                 <rect key="frame" x="0.0" y="162" width="213" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nt9-GV-xZG">
+                                                <rect key="frame" x="0.0" y="216" width="213" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Re-enter Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JYt-5d-HdF">
-                                                <rect key="frame" x="0.0" y="216" width="213" height="34"/>
+                                                <rect key="frame" x="0.0" y="270" width="213" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3z-jL-Vyj">
-                                        <rect key="frame" x="0.0" y="270" width="213" height="34.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="324" width="213" height="34.333333333333314"/>
                                         <color key="tintColor" systemColor="systemOrangeColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Signup">
                                             <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="pressSignupButton:" destination="gUj-60-sNd" eventType="touchUpInside" id="5bu-te-vXa"/>
+                                            <action selector="signupTapped:" destination="gUj-60-sNd" eventType="touchUpInside" id="jtS-Xi-bbt"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -387,12 +390,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="Djm-zq-7ZX"/>
                     <connections>
-                        <outlet property="firstNameTextField" destination="KcI-Ms-xjE" id="lSl-Zi-vfe"/>
+                        <outlet property="emailTextField" destination="oYP-nW-o51" id="9It-d6-aXQ"/>
+                        <outlet property="firstNameTextField" destination="KcI-Ms-xjE" id="8dE-B7-emX"/>
                         <outlet property="lastNameTextField" destination="BbY-Ny-GNp" id="hC8-xo-qvf"/>
-                        <outlet property="passwordTextField" destination="Nt9-GV-xZG" id="DOH-l5-uW7"/>
-                        <outlet property="reenterPasswordTextField" destination="JYt-5d-HdF" id="aLb-bf-KkR"/>
-                        <outlet property="signupButton" destination="d3z-jL-Vyj" id="VoO-rJ-BnF"/>
-                        <outlet property="usernameTextField" destination="akb-XV-KwL" id="NJI-gp-zzX"/>
+                        <outlet property="passwordTextField" destination="Nt9-GV-xZG" id="efi-Ny-Z11"/>
+                        <outlet property="reenterPassword" destination="JYt-5d-HdF" id="ChQ-hB-j86"/>
+                        <outlet property="usernameTextField" destination="akb-XV-KwL" id="Jnd-ec-gxl"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="signupToHome" id="MCB-QZ-Fgg"/>
                     </connections>
                 </viewController>
@@ -421,7 +424,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="dDJ-00-bSi"/>
-        <segue reference="HJe-dr-rp2"/>
+        <segue reference="MCB-QZ-Fgg"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
