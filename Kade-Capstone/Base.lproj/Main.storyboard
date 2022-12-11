@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Kade_Capstone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Kade_Capstone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,6 +105,9 @@
                                 <rect key="frame" x="166" y="785" width="61" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Save" cornerStyle="capsule"/>
+                                <connections>
+                                    <action selector="createDeck:" destination="Zw7-E6-Ifl" eventType="touchUpInside" id="iG3-Kf-zCe"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hgg-1V-gg3"/>
@@ -116,7 +119,7 @@
                             <constraint firstItem="3Vd-ns-5Qa" firstAttribute="leading" secondItem="xbN-dU-Oov" secondAttribute="leading" constant="166" id="JUr-47-8Hw"/>
                             <constraint firstItem="Hgg-1V-gg3" firstAttribute="trailing" secondItem="SRc-9W-tgN" secondAttribute="trailing" id="KiR-rT-W8p"/>
                             <constraint firstItem="3Vd-ns-5Qa" firstAttribute="top" secondItem="SRc-9W-tgN" secondAttribute="bottom" constant="8" symbolic="YES" id="Unm-UZ-zf7"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3Vd-ns-5Qa" secondAttribute="trailing" symbolic="YES" id="hnS-qU-Dov"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3Vd-ns-5Qa" secondAttribute="trailing" constant="20" symbolic="YES" id="hnS-qU-Dov"/>
                             <constraint firstItem="SRc-9W-tgN" firstAttribute="top" secondItem="Hgg-1V-gg3" secondAttribute="top" constant="55" id="v80-0y-YTn"/>
                             <constraint firstAttribute="bottom" secondItem="3Vd-ns-5Qa" secondAttribute="bottom" constant="32.666666666666629" id="wue-37-p90"/>
                             <constraint firstItem="g15-FB-USm" firstAttribute="leading" secondItem="Hgg-1V-gg3" secondAttribute="leading" constant="20" id="yzx-aq-vPM"/>
@@ -131,6 +134,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="SRc-9W-tgN" id="bJ9-aJ-VNc"/>
+                        <outlet property="deckName" destination="g15-FB-USm" id="4eD-gr-lWf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="chm-z9-BeO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -292,6 +296,9 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Login">
                                             <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="loginButton:" destination="ULr-ZH-A1S" eventType="touchUpInside" id="iso-Pi-r5B"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -306,6 +313,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="CGB-zY-c1j"/>
                     <connections>
+                        <outlet property="passwordTextField" destination="8dq-16-Dh8" id="lKM-l2-orm"/>
+                        <outlet property="usernameTextField" destination="fO4-be-hWd" id="Kl0-ko-w4D"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="loginToHome" id="vqc-O6-397"/>
                     </connections>
                 </viewController>
@@ -424,7 +433,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="dDJ-00-bSi"/>
-        <segue reference="MCB-QZ-Fgg"/>
+        <segue reference="vqc-O6-397"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

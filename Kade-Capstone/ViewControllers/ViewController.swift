@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    static var currentUser = " "
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

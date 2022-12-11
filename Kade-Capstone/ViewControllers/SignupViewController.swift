@@ -38,10 +38,12 @@ class SignupViewController: UIViewController {
             if let error = error{
                 print(error)
             } else{
+                ViewController.currentUser = username
+                
                 let user = authResult?.user
                 let uid = user?.uid
                 
-                let values = ["LastName": lName, "FirstName": fName, "uid": uid!]
+                let values = ["LastName": lName, "FirstName": fName,"email": email, "uid": uid!]
                 let ref = Database.database().reference(withPath: "users/\(username)")
                 ref.setValue(values) { (error, ref) in
                     if error != nil {

@@ -10,6 +10,8 @@
 		50128F0A2943C9E80040695C /* SetItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50128F092943C9E80040695C /* SetItem.swift */; };
 		50128F0C2943CD7B0040695C /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50128F0B2943CD7B0040695C /* CollectionViewCell.swift */; };
 		50128F0E2944E24D0040695C /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50128F0D2944E24D0040695C /* CreateViewController.swift */; };
+		501707BD29457B3E00785A3C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501707BC29457B3E00785A3C /* LoginViewController.swift */; };
+		501707C0294599A600785A3C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501707BF294599A600785A3C /* HomeViewController.swift */; };
 		502B70C92945004E008EAF52 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 502B70C82945004E008EAF52 /* FirebaseAuth */; };
 		502B70CB2945004E008EAF52 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 502B70CA2945004E008EAF52 /* FirebaseDatabase */; };
 		502B70CD2945004E008EAF52 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 502B70CC2945004E008EAF52 /* FirebaseFirestore */; };
@@ -29,6 +31,8 @@
 		50128F092943C9E80040695C /* SetItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetItem.swift; sourceTree = "<group>"; };
 		50128F0B2943CD7B0040695C /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		50128F0D2944E24D0040695C /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
+		501707BC29457B3E00785A3C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		501707BF294599A600785A3C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		502B70D229451B6A008EAF52 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		502B70D429451D91008EAF52 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		502B70D62945302F008EAF52 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -57,6 +61,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		501707BE2945906900785A3C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				50A70D262943B71B00DC96A2 /* ViewController.swift */,
+				502B70D229451B6A008EAF52 /* SignupViewController.swift */,
+				501707BC29457B3E00785A3C /* LoginViewController.swift */,
+				50128F0D2944E24D0040695C /* CreateViewController.swift */,
+				501707BF294599A600785A3C /* HomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		50A70D162943B71B00DC96A2 = {
 			isa = PBXGroup;
 			children = (
@@ -76,10 +92,9 @@
 		50A70D212943B71B00DC96A2 /* Kade-Capstone */ = {
 			isa = PBXGroup;
 			children = (
+				501707BE2945906900785A3C /* ViewControllers */,
 				50A70D222943B71B00DC96A2 /* AppDelegate.swift */,
 				50A70D242943B71B00DC96A2 /* SceneDelegate.swift */,
-				50A70D262943B71B00DC96A2 /* ViewController.swift */,
-				50128F0D2944E24D0040695C /* CreateViewController.swift */,
 				50A70D282943B71B00DC96A2 /* Main.storyboard */,
 				50A70D2B2943B71F00DC96A2 /* Assets.xcassets */,
 				50A70D2D2943B71F00DC96A2 /* LaunchScreen.storyboard */,
@@ -87,7 +102,6 @@
 				502B70D62945302F008EAF52 /* GoogleService-Info.plist */,
 				50128F0B2943CD7B0040695C /* CollectionViewCell.swift */,
 				50128F092943C9E80040695C /* SetItem.swift */,
-				502B70D229451B6A008EAF52 /* SignupViewController.swift */,
 				502B70D429451D91008EAF52 /* User.swift */,
 			);
 			path = "Kade-Capstone";
@@ -174,10 +188,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501707BD29457B3E00785A3C /* LoginViewController.swift in Sources */,
 				50A70D272943B71B00DC96A2 /* ViewController.swift in Sources */,
 				502B70D329451B6A008EAF52 /* SignupViewController.swift in Sources */,
 				50128F0C2943CD7B0040695C /* CollectionViewCell.swift in Sources */,
 				50128F0E2944E24D0040695C /* CreateViewController.swift in Sources */,
+				501707C0294599A600785A3C /* HomeViewController.swift in Sources */,
 				502B70D529451D92008EAF52 /* User.swift in Sources */,
 				50A70D232943B71B00DC96A2 /* AppDelegate.swift in Sources */,
 				50A70D252943B71B00DC96A2 /* SceneDelegate.swift in Sources */,

@@ -8,9 +8,13 @@
 
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
 class CreateViewController: UIViewController {
     var data:[SetItem] = []
+    
+    @IBOutlet weak var deckName: UITextField!
     
     @IBOutlet weak var collectionView: UICollectionView!
     //collectionView.widthAnchor.hashValue
@@ -26,6 +30,31 @@ class CreateViewController: UIViewController {
         layout1.scrollDirection = .vertical
         collectionView.delegate = self
         collectionView.dataSource = self
+    }
+    
+    
+    @IBAction func createDeck(_ sender: Any) {
+        guard let deckName = deckName.text, !deckName.isEmpty else {return}
+        
+        var deckTerms:[String:String] = [:]
+        for deck in data{
+            deckTerms[deck.term] = deck.definition
+        }
+        
+        deckTerms["Creator"] = ViewController.currentUser
+        
+        
+        let ref2 = Database.database().reference(withPath: "decks/\(deckName)")
+        ref2.setValue(deckTerms) { (error, ref) in
+            if error != nil {
+                print("error")
+            } else {
+                print("New Deck made")
+            }
+            
+        }
+        
+        
     }
     @IBAction func addItem(_ sender: Any) {
     
