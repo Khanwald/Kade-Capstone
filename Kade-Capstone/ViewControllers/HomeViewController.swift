@@ -6,11 +6,70 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import Firebase
 
 class HomeViewController: UIViewController {
     
+    @IBOutlet weak var deckCollectionView: UICollectionView!
+    
+    var array = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+
+        let layout1 = deckCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout1.scrollDirection = .horizontal
+        deckCollectionView.delegate = self
+        deckCollectionView.dataSource = self
+        
+        observe()
+        
+        print(self.array)
+        deckCollectionView.reloadData()
+            
+
+    
     }
+    
+    func observe(){
+        
+        let data = Database.database().reference().child("decks")
+
+        data.child(ViewController.currentUser).observe(DataEventType.value) { [self] (snapshot) in
+            self.array.removeAll()
+            for childSnapshot in snapshot.children.allObjects as! [DataSnapshot] {
+                let name = childSnapshot.key
+                self.array.append(name)
+                print(name)
+                
+            }
+            deckCollectionView.reloadData()
+        }
+    }
+    
+    
+}
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+    func collectionView( _ collectionView:UICollectionView, numberOfItemsInSection section:Int ) -> Int
+    {
+    
+        return self.array.count
+    }
+
+
+    func collectionView( _ collectionView:UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
+        let cell = deckCollectionView.dequeueReusableCell(withReuseIdentifier: "set", for: indexPath) as! DeckCollectionViewCell
+        
+
+        cell.deckNameLabel.text = array[indexPath.item]
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("cool")
+
+    }
+    
 }

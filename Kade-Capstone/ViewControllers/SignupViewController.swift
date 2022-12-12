@@ -10,7 +10,7 @@ import FirebaseDatabase
 import FirebaseAuth
 
 class SignupViewController: UIViewController {
-
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var reenterPassword: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -23,7 +23,7 @@ class SignupViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
     @IBAction func signupTapped(_ sender: Any) {
         guard let email = emailTextField.text,
               let username = usernameTextField.text,
@@ -52,11 +52,10 @@ class SignupViewController: UIViewController {
                         print("New user saved to database")
                     }
                     
+                    self.performSegue(withIdentifier: "signupToHome", sender: nil)
                 }
-//                print(Dictionary<String, String>(_immutableCocoaDictionary: Database.database().reference(withPath: "users/\(username)"))["uid"]!)
-                self.performSegue(withIdentifier: "signupToHome", sender: nil)
             }
         }
+        
     }
-    
 }

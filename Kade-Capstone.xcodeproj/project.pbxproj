@@ -12,6 +12,7 @@
 		50128F0E2944E24D0040695C /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50128F0D2944E24D0040695C /* CreateViewController.swift */; };
 		501707BD29457B3E00785A3C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501707BC29457B3E00785A3C /* LoginViewController.swift */; };
 		501707C0294599A600785A3C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501707BF294599A600785A3C /* HomeViewController.swift */; };
+		501707C42946844600785A3C /* DeckCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501707C32946844600785A3C /* DeckCollectionViewCell.swift */; };
 		502B70C92945004E008EAF52 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 502B70C82945004E008EAF52 /* FirebaseAuth */; };
 		502B70CB2945004E008EAF52 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 502B70CA2945004E008EAF52 /* FirebaseDatabase */; };
 		502B70CD2945004E008EAF52 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 502B70CC2945004E008EAF52 /* FirebaseFirestore */; };
@@ -33,6 +34,7 @@
 		50128F0D2944E24D0040695C /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		501707BC29457B3E00785A3C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		501707BF294599A600785A3C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		501707C32946844600785A3C /* DeckCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCollectionViewCell.swift; sourceTree = "<group>"; };
 		502B70D229451B6A008EAF52 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		502B70D429451D91008EAF52 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		502B70D62945302F008EAF52 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				50A70D302943B71F00DC96A2 /* Info.plist */,
 				502B70D62945302F008EAF52 /* GoogleService-Info.plist */,
 				50128F0B2943CD7B0040695C /* CollectionViewCell.swift */,
+				501707C32946844600785A3C /* DeckCollectionViewCell.swift */,
 				50128F092943C9E80040695C /* SetItem.swift */,
 				502B70D429451D91008EAF52 /* User.swift */,
 			);
@@ -195,6 +198,7 @@
 				50128F0E2944E24D0040695C /* CreateViewController.swift in Sources */,
 				501707C0294599A600785A3C /* HomeViewController.swift in Sources */,
 				502B70D529451D92008EAF52 /* User.swift in Sources */,
+				501707C42946844600785A3C /* DeckCollectionViewCell.swift in Sources */,
 				50A70D232943B71B00DC96A2 /* AppDelegate.swift in Sources */,
 				50A70D252943B71B00DC96A2 /* SceneDelegate.swift in Sources */,
 				50128F0A2943C9E80040695C /* SetItem.swift in Sources */,

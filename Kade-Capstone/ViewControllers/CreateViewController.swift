@@ -41,10 +41,10 @@ class CreateViewController: UIViewController {
             deckTerms[deck.term] = deck.definition
         }
         
-        deckTerms["Creator"] = ViewController.currentUser
         
         
-        let ref2 = Database.database().reference(withPath: "decks/\(deckName)")
+        
+        let ref2 = Database.database().reference(withPath: "decks/\(ViewController.currentUser)/\(deckName)")
         ref2.setValue(deckTerms) { (error, ref) in
             if error != nil {
                 print("error")
