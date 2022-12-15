@@ -16,11 +16,20 @@ class ViewController: UIViewController {
       static var currentUser: String = ""
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "loggedIn" {
+            segue.destination.modalPresentationStyle = .fullScreen
+        }
+    }
     
     override func viewDidAppear(_ animated: Bool)  {
         super.viewDidAppear(animated)
-
-        
+        if let user = Auth.auth().currentUser?.displayName{
+            User.currentUser = user
+        }
+        if Auth.auth().currentUser != nil{
+            performSegue(withIdentifier: "loggedIn", sender: nil)
+        }
     }
     
     override func viewDidLoad() {

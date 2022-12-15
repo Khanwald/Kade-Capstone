@@ -29,7 +29,10 @@ class HomeViewController: UIViewController {
     }
     
     
-//Observe function that initalizes collection view cells with deck names from user
+    @IBAction func logout(_ sender: Any) {
+        try! Auth.auth().signOut()
+    }
+    //Observe function that initalizes collection view cells with deck names from user
     func observe(){
         
         let data = Database.database().reference().child("decks")

@@ -24,6 +24,12 @@ class SignupViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "signupToHome" {
+            segue.destination.modalPresentationStyle = .fullScreen
+        }
+    }
+    
     @IBAction func signupTapped(_ sender: Any) {
         guard let email = emailTextField.text,
               let username = usernameTextField.text,
@@ -51,11 +57,27 @@ class SignupViewController: UIViewController {
                     } else {
                         print("New user saved to database")
                     }
-                    
+                    let user = Auth.auth().currentUser
+                    let changeRequest = user?.createProfileChangeRequest()
+                    changeRequest?.displayName = username
+
+                    changeRequest?.commitChanges { (error) in
+                      if let error = error {
+                        // An error occurred while updating the user's profile
+                          print(error)
+                      } else {
+                        // The user's display name was successfully updated
+                          print("success")
+                          print(Auth.auth().currentUser?.displayName)
+                      }
+                    }
                     self.performSegue(withIdentifier: "signupToHome", sender: nil)
                 }
+                
             }
+            
         }
+        
         
     }
 }

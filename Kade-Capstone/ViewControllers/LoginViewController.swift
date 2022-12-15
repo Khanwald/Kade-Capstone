@@ -22,10 +22,17 @@ class LoginViewController: UIViewController {
     
     //Auths user with username
     //I did it!
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "loginToHome" {
+            segue.destination.modalPresentationStyle = .fullScreen
+        }
+    }
     @IBAction func loginButton(_ sender: Any) {
         guard let username = usernameTextField.text,
               let password = passwordTextField.text else{return}
+        if username.isEmpty, password.isEmpty{
+            return
+        }
         
         var ref: DatabaseReference
         ref = Database.database().reference(withPath: "users")

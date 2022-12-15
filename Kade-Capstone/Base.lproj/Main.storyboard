@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="purple_orange_sky" translatesAutoresizingMaskIntoConstraints="NO" id="aZP-Up-hRd">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="901"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4w-2f-Q9N">
                                 <rect key="frame" x="159" y="189" width="75" height="35"/>
@@ -29,7 +29,7 @@
                                 </connections>
                             </button>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rer-Qg-CRI">
-                                <rect key="frame" x="0.0" y="288" width="393" height="325"/>
+                                <rect key="frame" x="0.0" y="288" width="393" height="276"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JOX-Ae-GMH">
                                     <size key="itemSize" width="323" height="239"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -66,6 +66,15 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CP9-mQ-N4v">
+                                <rect key="frame" x="159" y="677" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <action selector="logout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eho-Dw-fL5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -277,7 +286,7 @@
                     <connections>
                         <segue destination="gUj-60-sNd" kind="show" identifier="signup" id="YAI-cl-RdF"/>
                         <segue destination="ULr-ZH-A1S" kind="show" identifier="login" id="pTd-z2-aSf"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="loggedIn" id="hgC-xT-I34"/>
+                        <segue destination="wqc-sd-ugh" kind="show" identifier="loggedIn" id="jsk-KT-KiR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H2w-3W-zXq" sceneMemberID="firstResponder"/>
@@ -443,7 +452,7 @@
         <!--Navigation Controller-->
         <scene sceneID="dWr-Mc-6ZP">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="UYh-7f-lbR" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" navigationBarHidden="YES" id="UYh-7f-lbR" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IIr-ta-kru">
                         <autoresizingMask key="autoresizingMask"/>
@@ -480,7 +489,7 @@
         <!--Item-->
         <scene sceneID="g7x-oc-ci5">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="qlV-b9-sHq" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" navigationBarHidden="YES" id="qlV-b9-sHq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="YEo-Zl-xKq"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -518,8 +527,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vqc-O6-397"/>
-        <segue reference="hgC-xT-I34"/>
+        <segue reference="MCB-QZ-Fgg"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="c_library_wallpaper" width="359" height="808"/>
