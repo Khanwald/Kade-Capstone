@@ -38,7 +38,7 @@ class SignupViewController: UIViewController {
             if let error = error{
                 print(error)
             } else{
-                ViewController.currentUser = username
+                ViewController.User.currentUser = username
                 
                 let user = authResult?.user
                 let uid = user?.uid

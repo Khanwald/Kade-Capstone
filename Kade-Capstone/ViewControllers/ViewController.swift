@@ -6,10 +6,22 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
 
-    static var currentUser = " "
+    
+    
+    struct User {
+      static var currentUser: String = ""
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool)  {
+        super.viewDidAppear(animated)
+
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

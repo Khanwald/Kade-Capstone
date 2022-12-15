@@ -24,19 +24,17 @@ class HomeViewController: UIViewController {
         deckCollectionView.dataSource = self
         
         observe()
-        
-        print(self.array)
-        deckCollectionView.reloadData()
-            
 
     
     }
     
+    
+//Observe function that initalizes collection view cells with deck names from user
     func observe(){
         
         let data = Database.database().reference().child("decks")
 
-        data.child(ViewController.currentUser).observe(DataEventType.value) { [self] (snapshot) in
+        data.child(ViewController.User.currentUser).observe(DataEventType.value) { [self] (snapshot) in
             self.array.removeAll()
             for childSnapshot in snapshot.children.allObjects as! [DataSnapshot] {
                 let name = childSnapshot.key

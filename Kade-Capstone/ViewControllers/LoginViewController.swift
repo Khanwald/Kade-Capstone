@@ -37,7 +37,7 @@ class LoginViewController: UIViewController {
                 if let error = error{
                     print(error)
                 } else {
-                    ViewController.currentUser = username
+                    ViewController.User.currentUser = username
                     self.performSegue(withIdentifier: "loginToHome", sender: nil)
                 }
             }
