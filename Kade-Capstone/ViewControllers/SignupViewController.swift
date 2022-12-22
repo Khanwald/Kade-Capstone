@@ -68,7 +68,6 @@ class SignupViewController: UIViewController {
                       } else {
                         // The user's display name was successfully updated
                           print("success")
-                          print(Auth.auth().currentUser?.displayName)
                       }
                     }
                     self.performSegue(withIdentifier: "signupToHome", sender: nil)

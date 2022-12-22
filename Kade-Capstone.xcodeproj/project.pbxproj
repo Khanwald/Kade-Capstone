@@ -26,6 +26,8 @@
 		50A70D2A2943B71B00DC96A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50A70D282943B71B00DC96A2 /* Main.storyboard */; };
 		50A70D2C2943B71F00DC96A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50A70D2B2943B71F00DC96A2 /* Assets.xcassets */; };
 		50A70D2F2943B71F00DC96A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50A70D2D2943B71F00DC96A2 /* LaunchScreen.storyboard */; };
+		50AF4C8C2953820800FEC32B /* CreateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF4C8B2953820800FEC32B /* CreateCollectionViewCell.swift */; };
+		50AF4C8E295409EB00FEC32B /* AccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF4C8D295409EB00FEC32B /* AccessViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		50A70D2B2943B71F00DC96A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50A70D2E2943B71F00DC96A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50A70D302943B71F00DC96A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50AF4C8B2953820800FEC32B /* CreateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCollectionViewCell.swift; sourceTree = "<group>"; };
+		50AF4C8D295409EB00FEC32B /* AccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 				501707BC29457B3E00785A3C /* LoginViewController.swift */,
 				50128F0D2944E24D0040695C /* CreateViewController.swift */,
 				501707BF294599A600785A3C /* HomeViewController.swift */,
+				50AF4C8D295409EB00FEC32B /* AccessViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -106,6 +111,7 @@
 				501707C32946844600785A3C /* DeckCollectionViewCell.swift */,
 				50128F092943C9E80040695C /* SetItem.swift */,
 				502B70D429451D91008EAF52 /* User.swift */,
+				50AF4C8B2953820800FEC32B /* CreateCollectionViewCell.swift */,
 			);
 			path = "Kade-Capstone";
 			sourceTree = "<group>";
@@ -195,6 +201,7 @@
 				50A70D272943B71B00DC96A2 /* ViewController.swift in Sources */,
 				502B70D329451B6A008EAF52 /* SignupViewController.swift in Sources */,
 				50128F0C2943CD7B0040695C /* CollectionViewCell.swift in Sources */,
+				50AF4C8C2953820800FEC32B /* CreateCollectionViewCell.swift in Sources */,
 				50128F0E2944E24D0040695C /* CreateViewController.swift in Sources */,
 				501707C0294599A600785A3C /* HomeViewController.swift in Sources */,
 				502B70D529451D92008EAF52 /* User.swift in Sources */,
@@ -202,6 +209,7 @@
 				50A70D232943B71B00DC96A2 /* AppDelegate.swift in Sources */,
 				50A70D252943B71B00DC96A2 /* SceneDelegate.swift in Sources */,
 				50128F0A2943C9E80040695C /* SetItem.swift in Sources */,
+				50AF4C8E295409EB00FEC32B /* AccessViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

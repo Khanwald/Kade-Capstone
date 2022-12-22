@@ -11,18 +11,28 @@ import Firebase
 
 class HomeViewController: UIViewController {
     
+    @IBOutlet weak var xpBar: UIProgressView!
+    
     @IBOutlet weak var deckCollectionView: UICollectionView!
     
     var array = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        xpBar.transform = CGAffineTransform(scaleX: 1, y: 2)
+
+
 
         let layout1 = deckCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout1.scrollDirection = .horizontal
         deckCollectionView.delegate = self
         deckCollectionView.dataSource = self
         
+        
+        let imageView = UIImageView(image: UIImage(named: "fish_background"))
+        deckCollectionView.backgroundView = imageView
+
         observe()
 
     
@@ -31,6 +41,7 @@ class HomeViewController: UIViewController {
     
     @IBAction func logout(_ sender: Any) {
         try! Auth.auth().signOut()
+        print("Signed out")
     }
     //Observe function that initalizes collection view cells with deck names from user
     func observe(){
@@ -70,6 +81,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("cool")
+        let cell = deckCollectionView.cellForItem(at: indexPath) as! DeckCollectionViewCell
+        AccessViewController.name = cell.deckNameLabel.text ?? " "
+        
+        performSegue(withIdentifier: "terms", sender: nil)
+        
 
     }
     
