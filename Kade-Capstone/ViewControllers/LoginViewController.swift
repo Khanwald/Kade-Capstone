@@ -18,7 +18,17 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard(view:)))
+//
+//        view.addGestureRecognizer(tapGesture)
+        KeyboardHelper.addKeyboardDismissRecognizer(to: view)
+
     }
+    
+//    @objc func dismissKeyboard(view: UIView) {
+//        self.view.endEditing(true)
+//    }
     
     //prepares segue so that the home menu is not a popover
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

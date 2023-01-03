@@ -13,13 +13,15 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var xpBar: UIProgressView!
     
+    @IBOutlet weak var backgroundImage: UIImageView!
+    
     @IBOutlet weak var deckCollectionView: UICollectionView!
     
     var array = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        backgroundImage.image = ImageDisplayed.backgroundImage
         xpBar.transform = CGAffineTransform(scaleX: 1, y: 2)
 
 
@@ -42,6 +44,10 @@ class HomeViewController: UIViewController {
     @IBAction func logout(_ sender: Any) {
         try! Auth.auth().signOut()
         print("Signed out")
+    }
+    
+    @IBAction func goBack(segue:UIStoryboardSegue){
+        
     }
     //Observe function that initalizes collection view cells with deck names from user
     func observe(){

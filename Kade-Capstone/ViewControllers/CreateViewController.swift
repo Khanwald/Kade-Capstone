@@ -32,9 +32,34 @@ class CreateViewController: UIViewController {
         layout1.scrollDirection = .vertical
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        KeyboardHelper.addKeyboardDismissRecognizer(to: view)
+        
+        // Register for the UIKeyboardWillShowNotification and UIKeyboardWillHideNotification notifications
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    @objc func keyboardWillShow(notification: NSNotification) {
+        // Get the keyboard height and adjust the content inset of the collection view
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            let contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+            collectionView.contentInset = contentInset
+            collectionView.scrollIndicatorInsets = contentInset
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        // Reset the content inset of the collection view
+        let contentInset = UIEdgeInsets.zero
+        collectionView.contentInset = contentInset
+        collectionView.scrollIndicatorInsets = contentInset
+    }
+
     
+    @IBAction func exitKeyboard(_ sender: Any) {
+        
+    }
     @IBAction func createDeck(_ sender: Any) {
         guard let deckName = deckName.text, !deckName.isEmpty else {return}
 
