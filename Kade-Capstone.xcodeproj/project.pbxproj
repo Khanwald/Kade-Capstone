@@ -28,6 +28,7 @@
 		50A70D2F2943B71F00DC96A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50A70D2D2943B71F00DC96A2 /* LaunchScreen.storyboard */; };
 		50A821942954BD8900FE3850 /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A821932954BD8900FE3850 /* KeyboardHelper.swift */; };
 		50A821962955064300FE3850 /* ImageDisplayed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A821952955064300FE3850 /* ImageDisplayed.swift */; };
+		50A82198296606C800FE3850 /* UserCustomizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A82197296606C700FE3850 /* UserCustomizationViewController.swift */; };
 		50AF4C8C2953820800FEC32B /* CreateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF4C8B2953820800FEC32B /* CreateCollectionViewCell.swift */; };
 		50AF4C8E295409EB00FEC32B /* AccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF4C8D295409EB00FEC32B /* AccessViewController.swift */; };
 /* End PBXBuildFile section */
@@ -52,6 +53,7 @@
 		50A70D302943B71F00DC96A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50A821932954BD8900FE3850 /* KeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
 		50A821952955064300FE3850 /* ImageDisplayed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDisplayed.swift; sourceTree = "<group>"; };
+		50A82197296606C700FE3850 /* UserCustomizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCustomizationViewController.swift; sourceTree = "<group>"; };
 		50AF4C8B2953820800FEC32B /* CreateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCollectionViewCell.swift; sourceTree = "<group>"; };
 		50AF4C8D295409EB00FEC32B /* AccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +82,7 @@
 				50128F0D2944E24D0040695C /* CreateViewController.swift */,
 				501707BF294599A600785A3C /* HomeViewController.swift */,
 				50AF4C8D295409EB00FEC32B /* AccessViewController.swift */,
+				50A82197296606C700FE3850 /* UserCustomizationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				50128F0C2943CD7B0040695C /* CollectionViewCell.swift in Sources */,
 				50AF4C8C2953820800FEC32B /* CreateCollectionViewCell.swift in Sources */,
 				50128F0E2944E24D0040695C /* CreateViewController.swift in Sources */,
+				50A82198296606C800FE3850 /* UserCustomizationViewController.swift in Sources */,
 				501707C0294599A600785A3C /* HomeViewController.swift in Sources */,
 				502B70D529451D92008EAF52 /* User.swift in Sources */,
 				50A821962955064300FE3850 /* ImageDisplayed.swift in Sources */,

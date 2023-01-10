@@ -9,6 +9,6 @@ import UIKit
 
 class ImageDisplayed{
     
-    static var backgroundImage = UIImage(contentsOfFile: "orange_city_wallpaper")
-    static var sliderImage = UIImageView(image: UIImage(contentsOfFile: "fish_background"))
+    static var backgroundImage = UIImage(named: "orange_city_wallpaper.png")
+    static var sliderImage = UIImageView(image: UIImage(named: "fish_background"))
 }

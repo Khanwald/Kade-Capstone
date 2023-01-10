@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fGS-3P-CqU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UYh-7f-lbR">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -72,6 +72,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Button"/>
                                 <connections>
                                     <action selector="logout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eho-Dw-fL5"/>
+                                    <segue destination="l8b-bk-9ad" kind="unwind" unwindAction="unwindWithUnwindSegue:" id="Miz-Hu-iVG"/>
                                 </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleAspectFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="ghd-8g-5IX">
@@ -111,13 +112,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="aH1-lt-DDF"/>
                     <connections>
-                        <outlet property="backgroundImage" destination="aZP-Up-hRd" id="yI6-2j-wCU"/>
+                        <outlet property="backgroundImage" destination="aZP-Up-hRd" id="GIK-4x-yaX"/>
                         <outlet property="deckCollectionView" destination="Rer-Qg-CRI" id="3iC-bq-1W3"/>
                         <outlet property="xpBar" destination="ghd-8g-5IX" id="h1q-Jj-l70"/>
                         <segue destination="qRl-qu-LAk" kind="show" identifier="terms" id="TeJ-0G-w2w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="l8b-bk-9ad" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="707.63358778625957" y="119.71830985915494"/>
         </scene>
@@ -391,75 +393,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GcR-2h-EFV">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backdrop" translatesAutoresizingMaskIntoConstraints="NO" id="GcR-2h-EFV">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="GcR-2h-EFV" secondAttribute="height" multiplier="131:284" id="bAq-kr-rby"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="ESB-dj-4rC">
-                                <rect key="frame" x="90" y="330.33333333333331" width="213" height="84"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RD1-z3-ZS2">
-                                        <rect key="frame" x="0.0" y="0.0" width="213" height="38.666666666666664"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Login">
-                                            <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="loginButton:" destination="fGS-3P-CqU" eventType="touchUpInside" id="Idp-dP-6XV"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwK-gH-2zE">
-                                        <rect key="frame" x="0.0" y="49.666666666666686" width="213" height="34.333333333333343"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Signup">
-                                            <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="singupButton:" destination="fGS-3P-CqU" eventType="touchUpInside" id="Crb-1d-3L7"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="ESB-dj-4rC" secondAttribute="height" multiplier="200:79" id="wfP-JP-MLo"/>
-                                </constraints>
-                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KADE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbP-xv-Hh6">
-                                <rect key="frame" x="134" y="90" width="125" height="40.666666666666657"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <rect key="frame" x="134" y="352" width="125" height="40.666666666666686"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8N-RU-ETO">
+                                <rect key="frame" x="70" y="713" width="253" height="45"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Let's Go" cornerStyle="capsule">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.60044066562097942" green="0.61647790670394897" blue="0.48332147235176465" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="loginButton:" destination="fGS-3P-CqU" eventType="touchUpInside" id="Sbw-oK-G3l"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LgV-Hf-6Dc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="W8N-RU-ETO" firstAttribute="top" secondItem="qbP-xv-Hh6" secondAttribute="bottom" constant="320.32999999999998" id="1ka-Pd-yxp"/>
+                            <constraint firstItem="LgV-Hf-6Dc" firstAttribute="bottom" secondItem="W8N-RU-ETO" secondAttribute="bottom" constant="60" id="3Sv-Jt-t6e"/>
                             <constraint firstAttribute="bottom" secondItem="GcR-2h-EFV" secondAttribute="bottom" id="6lC-Ie-Ayh"/>
                             <constraint firstItem="qbP-xv-Hh6" firstAttribute="centerX" secondItem="TbL-nc-XqH" secondAttribute="centerX" id="6up-bT-oCA"/>
-                            <constraint firstItem="ESB-dj-4rC" firstAttribute="leading" secondItem="LgV-Hf-6Dc" secondAttribute="leading" constant="90" id="N0W-zh-nJP"/>
                             <constraint firstItem="GcR-2h-EFV" firstAttribute="top" secondItem="TbL-nc-XqH" secondAttribute="top" id="OyW-oS-ykA"/>
                             <constraint firstItem="GcR-2h-EFV" firstAttribute="leading" secondItem="LgV-Hf-6Dc" secondAttribute="leading" id="Ozf-Yh-T3B"/>
                             <constraint firstAttribute="trailing" secondItem="GcR-2h-EFV" secondAttribute="trailing" id="QuX-JP-sdY"/>
-                            <constraint firstItem="LgV-Hf-6Dc" firstAttribute="trailing" secondItem="ESB-dj-4rC" secondAttribute="trailing" constant="90" id="jmU-P0-3sv"/>
+                            <constraint firstItem="LgV-Hf-6Dc" firstAttribute="trailing" secondItem="W8N-RU-ETO" secondAttribute="trailing" constant="70" id="Zuv-d8-2dZ"/>
                             <constraint firstItem="qbP-xv-Hh6" firstAttribute="leading" secondItem="LgV-Hf-6Dc" secondAttribute="leading" constant="134" id="kad-J8-sU3"/>
-                            <constraint firstItem="ESB-dj-4rC" firstAttribute="leading" secondItem="LgV-Hf-6Dc" secondAttribute="leading" constant="90" id="lOj-2N-ynB"/>
-                            <constraint firstItem="ESB-dj-4rC" firstAttribute="top" secondItem="qbP-xv-Hh6" secondAttribute="bottom" constant="199.66666666666669" id="rjS-nG-pWW"/>
-                            <constraint firstItem="qbP-xv-Hh6" firstAttribute="top" secondItem="LgV-Hf-6Dc" secondAttribute="top" constant="31" id="t5a-Jd-juZ"/>
-                            <constraint firstItem="LgV-Hf-6Dc" firstAttribute="trailing" secondItem="ESB-dj-4rC" secondAttribute="trailing" constant="90" id="xub-es-6BE"/>
+                            <constraint firstItem="qbP-xv-Hh6" firstAttribute="top" secondItem="LgV-Hf-6Dc" secondAttribute="top" constant="293" id="t5a-Jd-juZ"/>
+                            <constraint firstItem="W8N-RU-ETO" firstAttribute="leading" secondItem="LgV-Hf-6Dc" secondAttribute="leading" constant="70" id="vS3-Iw-yrz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="G9p-hV-w13"/>
                     <connections>
-                        <segue destination="gUj-60-sNd" kind="show" identifier="signup" id="YAI-cl-RdF"/>
                         <segue destination="ULr-ZH-A1S" kind="show" identifier="login" id="pTd-z2-aSf"/>
                         <segue destination="wqc-sd-ugh" kind="show" identifier="loggedIn" id="jsk-KT-KiR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H2w-3W-zXq" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2105" y="13"/>
+            <point key="canvasLocation" x="-2106.1068702290077" y="12.67605633802817"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="XrY-e0-1fk">
@@ -469,7 +452,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gfw-QM-bjs">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" fixedFrame="YES" image="login" translatesAutoresizingMaskIntoConstraints="NO" id="gfw-QM-bjs">
                                 <rect key="frame" x="-12" y="0.0" width="405" height="852"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
@@ -513,14 +496,36 @@
                                 </subviews>
                                 <gestureRecognizers/>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foz-yh-MFW">
+                                <rect key="frame" x="117" y="455" width="123.33333333333331" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDt-c5-bNH">
+                                <rect key="frame" x="240" y="455" width="50" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="BNB-0u-ypR"/>
+                                    <constraint firstAttribute="width" constant="50" id="Hkp-w3-lHA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="SignUp"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Of0-Nj-Dct"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="Of0-Nj-Dct" firstAttribute="bottom" secondItem="WDt-c5-bNH" secondAttribute="bottom" constant="340" id="CXg-XN-UxP"/>
                             <constraint firstItem="Of0-Nj-Dct" firstAttribute="trailing" secondItem="BKJ-u4-Bzu" secondAttribute="trailing" constant="90" id="VOK-N4-FeV"/>
                             <constraint firstItem="BKJ-u4-Bzu" firstAttribute="top" secondItem="Of0-Nj-Dct" secondAttribute="top" constant="252" id="cDt-hF-CDO"/>
+                            <constraint firstItem="WDt-c5-bNH" firstAttribute="top" secondItem="BKJ-u4-Bzu" secondAttribute="bottom" constant="1.6666666666666288" id="miB-eg-sxf"/>
+                            <constraint firstItem="WDt-c5-bNH" firstAttribute="leading" secondItem="Of0-Nj-Dct" secondAttribute="leading" constant="240" id="mrg-ar-52X"/>
                             <constraint firstItem="BKJ-u4-Bzu" firstAttribute="leading" secondItem="Of0-Nj-Dct" secondAttribute="leading" constant="90" id="ngM-to-6Xy"/>
+                            <constraint firstItem="WDt-c5-bNH" firstAttribute="bottom" secondItem="foz-yh-MFW" secondAttribute="bottom" id="oDg-IF-k9J"/>
+                            <constraint firstItem="WDt-c5-bNH" firstAttribute="top" secondItem="foz-yh-MFW" secondAttribute="top" id="q6O-RR-peL"/>
+                            <constraint firstItem="foz-yh-MFW" firstAttribute="leading" secondItem="Of0-Nj-Dct" secondAttribute="leading" constant="117" id="zbA-Wr-rSK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CGB-zY-c1j"/>
@@ -532,7 +537,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJB-s6-lbS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1303" y="-308"/>
+            <point key="canvasLocation" x="-1303.0534351145038" y="-308.45070422535213"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="oOw-hk-7Ns">
@@ -542,7 +547,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZiB-kw-EUP">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="signup" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZiB-kw-EUP">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -702,10 +707,10 @@
             </objects>
             <point key="canvasLocation" x="1502" y="120"/>
         </scene>
-        <!--View Controller-->
+        <!--User Customization View Controller-->
         <scene sceneID="eSY-qu-M3d">
             <objects>
-                <viewController id="3Mk-xy-1Wr" sceneMemberID="viewController">
+                <viewController id="3Mk-xy-1Wr" customClass="UserCustomizationViewController" customModule="Kade_Capstone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1sm-oS-KF5">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -720,11 +725,17 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="191.66666666666666" height="216.66666666666666"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                                <connections>
+                                                    <action selector="pressed1:" destination="3Mk-xy-1Wr" eventType="touchUpInside" id="3FH-GD-4Cj"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQ5-vd-s0X">
                                                 <rect key="frame" x="201.66666666666663" y="0.0" width="191.33333333333337" height="216.66666666666666"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                                <connections>
+                                                    <action selector="pressed2:" destination="3Mk-xy-1Wr" eventType="touchUpInside" id="nFP-1I-QN1"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -735,11 +746,17 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="191.66666666666666" height="216.33333333333334"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                                <connections>
+                                                    <action selector="pressed3:" destination="3Mk-xy-1Wr" eventType="touchUpInside" id="UUe-p0-75G"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2AY-WD-keQ">
                                                 <rect key="frame" x="201.66666666666663" y="0.0" width="191.33333333333337" height="216.33333333333334"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                                <connections>
+                                                    <action selector="pressed4:" destination="3Mk-xy-1Wr" eventType="touchUpInside" id="Z4x-AN-28R"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -786,10 +803,13 @@
         <segue reference="vqc-O6-397"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="backdrop" width="1024" height="1536"/>
         <image name="blackhole_wallpaper" width="359" height="808"/>
         <image name="c_library_wallpaper" width="359" height="808"/>
         <image name="gamecontroller.fill" catalog="system" width="128" height="79"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="login" width="1024" height="1536"/>
+        <image name="signup" width="1024" height="1536"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

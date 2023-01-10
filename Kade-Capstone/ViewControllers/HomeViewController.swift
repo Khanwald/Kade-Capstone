@@ -18,11 +18,20 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var deckCollectionView: UICollectionView!
     
     var array = [String]()
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        backgroundImage.image = ImageDisplayed.backgroundImage
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        backgroundImage.image = ImageDisplayed.backgroundImage
+//        backgroundImage.image = ImageDisplayed.backgroundImage
         xpBar.transform = CGAffineTransform(scaleX: 1, y: 2)
+        
 
 
 
@@ -42,13 +51,21 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func logout(_ sender: Any) {
-        try! Auth.auth().signOut()
-        print("Signed out")
+        do {
+          try Auth.auth().signOut()
+            navigationController?.popToRootViewController(animated: true)
+            
+        } catch {
+          print("Error signing out: \(error)")
+        }
+
+        
     }
     
     @IBAction func goBack(segue:UIStoryboardSegue){
         
     }
+    
     //Observe function that initalizes collection view cells with deck names from user
     func observe(){
         

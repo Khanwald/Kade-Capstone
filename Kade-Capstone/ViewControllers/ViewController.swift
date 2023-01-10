@@ -31,14 +31,12 @@ class ViewController: UIViewController {
             performSegue(withIdentifier: "loggedIn", sender: nil)
         }
     }
-    
+    @IBAction func unwind(unwindSegue: UIStoryboardSegue) {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    }
-
-    @IBAction func singupButton(_ sender: Any) {
-        performSegue(withIdentifier: "signup", sender: nil)
     }
     
     @IBAction func loginButton(_ sender: Any) {
