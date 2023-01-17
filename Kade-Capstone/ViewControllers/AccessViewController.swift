@@ -9,6 +9,8 @@ import UIKit
 import Firebase
 class AccessViewController: UIViewController {
     
+    static var deck:[String:String] = [:]
+    
     static var name = " "
     var terms: [SetItem] = []
     
@@ -17,7 +19,7 @@ class AccessViewController: UIViewController {
     
     override func viewDidLoad() {
         setLabel.text = AccessViewController.name
-        
+        AccessViewController.deck.removeAll()
         layout()
         
         let ref = Database.database().reference().child("decks").child(ViewController.User.currentUser).child(AccessViewController.name)
@@ -34,6 +36,8 @@ class AccessViewController: UIViewController {
             self.tAndD.reloadData()
     
         }
+        
+        
     }
     
     func layout(){
@@ -44,6 +48,20 @@ class AccessViewController: UIViewController {
         tAndD.delegate = self
         tAndD.dataSource = self
     }
+    
+    @IBAction func crosswordButton(_ sender: Any) {
+        if let visibleCells = tAndD.visibleCells as? [CollectionViewCell] {
+            visibleCells.forEach { cell in
+                // do something with each cell
+                if let term = cell.termLabel.text, let def = cell.definitionLabel.text {
+                    AccessViewController.deck[term] = def
+                }
+            }
+            
+        }
+        print(AccessViewController.deck)
+    }
+    
 }
 extension AccessViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView( _ collectionView:UICollectionView, numberOfItemsInSection section:Int ) -> Int
