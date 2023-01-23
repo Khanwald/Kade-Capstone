@@ -34,6 +34,9 @@
 		50AF4C8C2953820800FEC32B /* CreateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF4C8B2953820800FEC32B /* CreateCollectionViewCell.swift */; };
 		50AF4C8E295409EB00FEC32B /* AccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF4C8D295409EB00FEC32B /* AccessViewController.swift */; };
 		50B0B69829724AAA0049A67F /* BlockCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B0B69729724AAA0049A67F /* BlockCollectionViewCell.swift */; };
+		50DDA5F8297EEB840008F31A /* MatchingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DDA5F7297EEB840008F31A /* MatchingCollectionViewController.swift */; };
+		50DDA5FD297EF0070008F31A /* MatchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DDA5FC297EF0070008F31A /* MatchCollectionViewCell.swift */; };
+		50DDA5FF297EF0FC0008F31A /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DDA5FE297EF0FC0008F31A /* Deck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +65,9 @@
 		50AF4C8B2953820800FEC32B /* CreateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCollectionViewCell.swift; sourceTree = "<group>"; };
 		50AF4C8D295409EB00FEC32B /* AccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessViewController.swift; sourceTree = "<group>"; };
 		50B0B69729724AAA0049A67F /* BlockCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockCollectionViewCell.swift; sourceTree = "<group>"; };
+		50DDA5F7297EEB840008F31A /* MatchingCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingCollectionViewController.swift; sourceTree = "<group>"; };
+		50DDA5FC297EF0070008F31A /* MatchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCollectionViewCell.swift; sourceTree = "<group>"; };
+		50DDA5FE297EF0FC0008F31A /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,7 @@
 				50AF4C8D295409EB00FEC32B /* AccessViewController.swift */,
 				50A82197296606C700FE3850 /* UserCustomizationViewController.swift */,
 				501CFAB32971C43C002395CD /* CrosswordViewController.swift */,
+				50DDA5F7297EEB840008F31A /* MatchingCollectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -113,7 +120,9 @@
 		50A70D212943B71B00DC96A2 /* Kade-Capstone */ = {
 			isa = PBXGroup;
 			children = (
+				50DDA5FB297EEE260008F31A /* Class_Structs */,
 				501707BE2945906900785A3C /* ViewControllers */,
+				50DDA5F9297EED9E0008F31A /* Cells */,
 				50A70D222943B71B00DC96A2 /* AppDelegate.swift */,
 				50A70D242943B71B00DC96A2 /* SceneDelegate.swift */,
 				50A70D282943B71B00DC96A2 /* Main.storyboard */,
@@ -121,17 +130,33 @@
 				50A70D2D2943B71F00DC96A2 /* LaunchScreen.storyboard */,
 				50A70D302943B71F00DC96A2 /* Info.plist */,
 				502B70D62945302F008EAF52 /* GoogleService-Info.plist */,
-				50128F0B2943CD7B0040695C /* CollectionViewCell.swift */,
+			);
+			path = "Kade-Capstone";
+			sourceTree = "<group>";
+		};
+		50DDA5F9297EED9E0008F31A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				50B0B69729724AAA0049A67F /* BlockCollectionViewCell.swift */,
+				50AF4C8B2953820800FEC32B /* CreateCollectionViewCell.swift */,
 				501707C32946844600785A3C /* DeckCollectionViewCell.swift */,
+				50128F0B2943CD7B0040695C /* CollectionViewCell.swift */,
+				50DDA5FC297EF0070008F31A /* MatchCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		50DDA5FB297EEE260008F31A /* Class_Structs */ = {
+			isa = PBXGroup;
+			children = (
 				50128F092943C9E80040695C /* SetItem.swift */,
 				502B70D429451D91008EAF52 /* User.swift */,
-				50AF4C8B2953820800FEC32B /* CreateCollectionViewCell.swift */,
 				50A821932954BD8900FE3850 /* KeyboardHelper.swift */,
 				50A821952955064300FE3850 /* ImageDisplayed.swift */,
 				501CFAB1297084F7002395CD /* CrossWordAlgo.swift */,
-				50B0B69729724AAA0049A67F /* BlockCollectionViewCell.swift */,
+				50DDA5FE297EF0FC0008F31A /* Deck.swift */,
 			);
-			path = "Kade-Capstone";
+			path = Class_Structs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,9 +255,12 @@
 				501707C42946844600785A3C /* DeckCollectionViewCell.swift in Sources */,
 				50A70D232943B71B00DC96A2 /* AppDelegate.swift in Sources */,
 				50A70D252943B71B00DC96A2 /* SceneDelegate.swift in Sources */,
+				50DDA5F8297EEB840008F31A /* MatchingCollectionViewController.swift in Sources */,
 				501CFAB2297084F7002395CD /* CrossWordAlgo.swift in Sources */,
 				50128F0A2943C9E80040695C /* SetItem.swift in Sources */,
 				50AF4C8E295409EB00FEC32B /* AccessViewController.swift in Sources */,
+				50DDA5FD297EF0070008F31A /* MatchCollectionViewCell.swift in Sources */,
+				50DDA5FF297EF0FC0008F31A /* Deck.swift in Sources */,
 				501CFAB42971C43C002395CD /* CrosswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

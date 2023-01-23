@@ -10,28 +10,32 @@ import UIKit
 class CrosswordViewController: UIViewController {
     
     @IBOutlet weak var grid: UICollectionView!
+    
+    @IBOutlet weak var hints: UILabel!
+    
     var gridA:[[String]] = [[]]
+    var best:Array<CrosswordsGenerator.Word> = Array()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // collection view init
-        grid.delegate = self
+
+
         grid.dataSource = self
-        let layout = grid.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        let size = min(grid.frame.size.width, grid.frame.size.height)/10
-        layout.itemSize = CGSize(width: size, height: size)
+        grid.delegate = self
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 39, height: 39)
 
 
         // crossword init
         let crosswordsGenerator = CrosswordsGenerator()
-        crosswordsGenerator.words = ["Cell", "Genes", "Solar", "Laser", "Virus", "Comet", "Wires", "Atoms", "Algae", "Orbit", "Biome", "Fungi", "Laser", "Neuron", "Tissue", "Proton", "Virus", "Algae", "Quarks", "Bacteria", "Fungus", "Virus", "Genome", "Laser", "Galaxy", "Cells", "Solar", "Probes", "Cytron", "Neuron", "Comets"]
+        crosswordsGenerator.words = Deck.keys
         //Array(AccessViewController.deck.keys)
-        crosswordsGenerator.columns = 9
-        crosswordsGenerator.rows = 9
+        crosswordsGenerator.columns = 10
+        crosswordsGenerator.rows = 10
         crosswordsGenerator.debug = true
         crosswordsGenerator.emptySymbol = "*"
         
@@ -50,23 +54,21 @@ class CrosswordViewController: UIViewController {
                 }
             }
         }
-        
+        best = bestResult
         print(bestResult)
         crosswordsGenerator.bestResult(terms: bestResult)
         gridA = crosswordsGenerator.toArray()
-//        for row in 0...gridA.count - 1{
-//            for col in 0...gridA[row].count - 1{
-//                let randomLetter = String(Array("ABCDEFGHIJKLMNOPQRSTUVWXYZ").shuffled().prefix(1))
-//                switch gridA[row][col]{
-//                case "*":
-//                    gridA[row][col] = randomLetter
-//                default:
-//                    continue
-//                }
-//
-//            }
-//        }
         print(gridA)
+        
+        hints.text = " "
+        for word in bestResult{
+
+            let x = getNumberHint(row: word.row - 1, col: word.column - 1)
+            if let hint = Deck.terms[word.word]{
+                hints.text! += "\(x). \(hint) "
+            }
+            
+        }
         
     }
     
@@ -80,13 +82,61 @@ class CrosswordViewController: UIViewController {
         return long
     }
 
+    @IBAction func checkBoard(_ sender: Any) {
+        if let visibleCells = grid.visibleCells as? [BlockCollectionViewCell] {
+            visibleCells.forEach { cell in
+                // do something with each cell
+                
+                let indexPath = grid.indexPath(for: cell)
+                
+                let row = indexPath?.section
+                let col = indexPath?.item
+    
+                if cell.block.text == gridA[row!][col!]{
+                        UIView.animate(withDuration: 0.5) {
+                            cell.block.backgroundColor = .orange
+                            cell.block.isUserInteractionEnabled = false
+                        }
+                }else{
+                    cell.block.backgroundColor = .red
+                    let animation = CABasicAnimation(keyPath: "position")
+                    animation.duration = 0.03
+                    animation.repeatCount = 4
+                    animation.autoreverses = true
+                    animation.fromValue = NSValue(cgPoint: CGPoint(x: cell.block.center.x - 5, y: cell.block.center.y))
+                    animation.toValue = NSValue(cgPoint: CGPoint(x: cell.block.center.x + 5, y: cell.block.center.y))
+                    cell.block.layer.add(animation, forKey: "position")
+                    UIView.animate(withDuration: 0.5) {
+                        cell.block.backgroundColor = .white
+                        cell.block.text = ""
+                    }
+                }
+                
+            }
+        }
+            
+    }
+    
+    func getNumberHint(row:Int,col:Int)->Int{
+        let size = best.count
+        for count in 0...size - 1{
+            let row2 = best[count].row
+            let col2 = best[count].column
+            
+            if row == row2 - 1 && col == col2 - 1{
+                return count + 1
+            }
+        }
+        return 0
+    }
 }
+
 extension CrosswordViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 9    }
+        return 10    }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return 10
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -94,18 +144,25 @@ extension CrosswordViewController: UICollectionViewDelegate, UICollectionViewDat
         
         let row = indexPath.section
         let col = indexPath.item
-
         
 //        print("\(row)  \(col)")
-//        if gridA[row][col] == "*"{
-//            cell.textField.backgroundColor = .black
-//            cell.isHidden = true
-//        }
-        cell.label.text = gridA[row][col]
+        if gridA[row][col] == "*"{
+            cell.isHidden = true
+            return cell
+        }
+        
+        
+//        cell.block.placeholder = gridA[row][col]
+        let a = getNumberHint(row: row, col: col)
+        
+        if a != 0{
+            cell.block.placeholder = String(a)
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         
     }
 }
