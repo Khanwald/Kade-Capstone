@@ -208,7 +208,7 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="gameButton:" destination="qRl-qu-LAk" eventType="touchUpInside" id="70p-F9-ycl"/>
-                                            <segue destination="RAd-Qp-zEi" kind="show" id="cv5-5e-dJp"/>
+                                            <segue destination="V58-k1-gDo" kind="show" id="Ncl-zG-WO0"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWQ-5d-vPQ">
@@ -358,41 +358,49 @@
             </objects>
             <point key="canvasLocation" x="1536.6412213740457" y="862.67605633802816"/>
         </scene>
-        <!--Collection View Controller-->
-        <scene sceneID="wPo-XX-pxv">
+        <!--Match View Controller-->
+        <scene sceneID="x4V-Ce-J1s">
             <objects>
-                <collectionViewController id="RAd-Qp-zEi" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="wZ6-6r-c00">
+                <viewController id="V58-k1-gDo" customClass="MatchViewController" customModule="Kade_Capstone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7em-Mr-P6m">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zdz-oc-rCB">
-                            <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="tqW-xu-vwq" customClass="CollectionViewCell" customModule="Kade_Capstone" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JHU-j6-WDS">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Bl8-eI-AuV">
-                                    <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionViewCellContentView>
-                                <color key="backgroundColor" red="0.61647790670000002" green="0.61453501150000001" blue="0.47074202310000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="RAd-Qp-zEi" id="NPa-al-Qrb"/>
-                            <outlet property="delegate" destination="RAd-Qp-zEi" id="tOT-Xb-3AT"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="Nq9-bS-oEH"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XoH-Rm-CmO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="5bN-ph-sMC">
+                                    <size key="itemSize" width="283" height="169"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="card" id="aNJ-rP-5cF" customClass="MatchCollectionViewCell" customModule="Kade_Capstone" customModuleProvider="target">
+                                        <rect key="frame" x="55" y="1" width="283" height="169"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZmE-xc-4DT">
+                                            <rect key="frame" x="0.0" y="0.0" width="283" height="169"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" red="0.94408673050000003" green="0.60614728929999995" blue="0.21552103759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="283" height="169"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NmY-Se-EyJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rfu-mw-8hG"/>
+                    <connections>
+                        <outlet property="matchBoard" destination="JHU-j6-WDS" id="vLT-Ez-ptu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MqQ-11-2MW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2305" y="865"/>
+            <point key="canvasLocation" x="2296.9465648854962" y="853.52112676056345"/>
         </scene>
         <!--Create View Controller-->
         <scene sceneID="Nnz-1w-h6r">
