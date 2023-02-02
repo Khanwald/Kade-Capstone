@@ -12,6 +12,8 @@ class AccessViewController: UIViewController {
     static var name = " "
     var terms: [SetItem] = []
     
+    
+    
     @IBOutlet var setLabel: UILabel!
     @IBOutlet var tAndD: UICollectionView!
     
@@ -23,6 +25,7 @@ class AccessViewController: UIViewController {
         layout()
         
         setUp()
+        
         
         
     }
@@ -53,18 +56,22 @@ class AccessViewController: UIViewController {
     }
     
     func data(){
-        if let visibleCells = tAndD.visibleCells as? [CollectionViewCell] {
-            visibleCells.forEach { cell in
-                // do something with each cell
-                if let term = cell.termLabel.text, let def = cell.definitionLabel.text {
-                    Deck.terms[term] = def
-                }
-            }
-            
+        for x in terms{
+            Deck.terms[x.term] = x.definition
         }
+//        if let visibleCells = tAndD.visibleCells as? [CollectionViewCell] {
+//            visibleCells.forEach { cell in
+//                // do something with each cell
+//                if let term = cell.termLabel.text, let def = cell.definitionLabel.text {
+//                    Deck.terms[term] = def
+//                }
+//            }
+//
+//        }
     }
     @IBAction func gameButton(_ sender: Any) {
         data()
+    
     }
     
     

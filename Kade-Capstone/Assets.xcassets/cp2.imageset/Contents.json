@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Condominium_Corpsus_manifold_garden_William_Chyr_9736297b-6e9b-4067-b9a8-1a8a9f67554c.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

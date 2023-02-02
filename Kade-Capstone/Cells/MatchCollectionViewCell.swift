@@ -9,6 +9,8 @@ import UIKit
 
 class MatchCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var text: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
