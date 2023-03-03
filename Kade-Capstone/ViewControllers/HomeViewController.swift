@@ -42,7 +42,9 @@ class HomeViewController: UIViewController {
         
         
         let imageView = UIImageView(image: UIImage(named: "fish_background"))
-        deckCollectionView.backgroundView = imageView
+//        deckCollectionView.backgroundView = imageView
+        
+        deckCollectionView.backgroundColor = .clear
 
         observe()
 

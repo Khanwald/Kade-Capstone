@@ -22,6 +22,10 @@
 		502B70D329451B6A008EAF52 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B70D229451B6A008EAF52 /* SignupViewController.swift */; };
 		502B70D529451D92008EAF52 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B70D429451D91008EAF52 /* User.swift */; };
 		502B70D72945302F008EAF52 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 502B70D62945302F008EAF52 /* GoogleService-Info.plist */; };
+		503FC9CE299D5EA50081F61E /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FC9CD299D5EA50081F61E /* TestViewController.swift */; };
+		50A57EE029ACEAF7003D7A8E /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 50A57EDF29ACEAF7003D7A8E /* OpenAISwift */; };
+		50A57EE229ACEB53003D7A8E /* OpenAIChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A57EE129ACEB53003D7A8E /* OpenAIChat.swift */; };
+		50A57EE429AD192B003D7A8E /* SearchChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A57EE329AD192B003D7A8E /* SearchChatViewController.swift */; };
 		50A70D232943B71B00DC96A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A70D222943B71B00DC96A2 /* AppDelegate.swift */; };
 		50A70D252943B71B00DC96A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A70D242943B71B00DC96A2 /* SceneDelegate.swift */; };
 		50A70D272943B71B00DC96A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A70D262943B71B00DC96A2 /* ViewController.swift */; };
@@ -51,6 +55,9 @@
 		502B70D229451B6A008EAF52 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		502B70D429451D91008EAF52 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		502B70D62945302F008EAF52 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		503FC9CD299D5EA50081F61E /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		50A57EE129ACEB53003D7A8E /* OpenAIChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIChat.swift; sourceTree = "<group>"; };
+		50A57EE329AD192B003D7A8E /* SearchChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchChatViewController.swift; sourceTree = "<group>"; };
 		50A70D1F2943B71B00DC96A2 /* Kade-Capstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kade-Capstone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A70D222943B71B00DC96A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50A70D242943B71B00DC96A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +83,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				502B70CB2945004E008EAF52 /* FirebaseDatabase in Frameworks */,
+				50A57EE029ACEAF7003D7A8E /* OpenAISwift in Frameworks */,
 				502B70CF2945004E008EAF52 /* FirebaseStorage in Frameworks */,
 				502B70C92945004E008EAF52 /* FirebaseAuth in Frameworks */,
 				502B70CD2945004E008EAF52 /* FirebaseFirestore in Frameworks */,
@@ -93,10 +101,12 @@
 				501707BC29457B3E00785A3C /* LoginViewController.swift */,
 				50128F0D2944E24D0040695C /* CreateViewController.swift */,
 				501707BF294599A600785A3C /* HomeViewController.swift */,
-				50AF4C8D295409EB00FEC32B /* AccessViewController.swift */,
 				50A82197296606C700FE3850 /* UserCustomizationViewController.swift */,
+				50AF4C8D295409EB00FEC32B /* AccessViewController.swift */,
 				501CFAB32971C43C002395CD /* CrosswordViewController.swift */,
 				50DDA6002980197A0008F31A /* MatchVIewController.swift */,
+				503FC9CD299D5EA50081F61E /* TestViewController.swift */,
+				50A57EE329AD192B003D7A8E /* SearchChatViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -155,6 +165,7 @@
 				50A821952955064300FE3850 /* ImageDisplayed.swift */,
 				501CFAB1297084F7002395CD /* CrossWordAlgo.swift */,
 				50DDA5FE297EF0FC0008F31A /* Deck.swift */,
+				50A57EE129ACEB53003D7A8E /* OpenAIChat.swift */,
 			);
 			path = Class_Structs;
 			sourceTree = "<group>";
@@ -180,6 +191,7 @@
 				502B70CA2945004E008EAF52 /* FirebaseDatabase */,
 				502B70CC2945004E008EAF52 /* FirebaseFirestore */,
 				502B70CE2945004E008EAF52 /* FirebaseStorage */,
+				50A57EDF29ACEAF7003D7A8E /* OpenAISwift */,
 			);
 			productName = "Kade-Capstone";
 			productReference = 50A70D1F2943B71B00DC96A2 /* Kade-Capstone.app */;
@@ -211,6 +223,7 @@
 			mainGroup = 50A70D162943B71B00DC96A2;
 			packageReferences = (
 				502B70C72945004E008EAF52 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				50A57EDE29ACEAF7003D7A8E /* XCRemoteSwiftPackageReference "OpenAISwift" */,
 			);
 			productRefGroup = 50A70D202943B71B00DC96A2 /* Products */;
 			projectDirPath = "";
@@ -242,6 +255,7 @@
 			files = (
 				501707BD29457B3E00785A3C /* LoginViewController.swift in Sources */,
 				50A70D272943B71B00DC96A2 /* ViewController.swift in Sources */,
+				503FC9CE299D5EA50081F61E /* TestViewController.swift in Sources */,
 				50A821942954BD8900FE3850 /* KeyboardHelper.swift in Sources */,
 				502B70D329451B6A008EAF52 /* SignupViewController.swift in Sources */,
 				50128F0C2943CD7B0040695C /* CollectionViewCell.swift in Sources */,
@@ -254,9 +268,11 @@
 				502B70D529451D92008EAF52 /* User.swift in Sources */,
 				50A821962955064300FE3850 /* ImageDisplayed.swift in Sources */,
 				501707C42946844600785A3C /* DeckCollectionViewCell.swift in Sources */,
+				50A57EE229ACEB53003D7A8E /* OpenAIChat.swift in Sources */,
 				50A70D232943B71B00DC96A2 /* AppDelegate.swift in Sources */,
 				50A70D252943B71B00DC96A2 /* SceneDelegate.swift in Sources */,
 				501CFAB2297084F7002395CD /* CrossWordAlgo.swift in Sources */,
+				50A57EE429AD192B003D7A8E /* SearchChatViewController.swift in Sources */,
 				50128F0A2943C9E80040695C /* SetItem.swift in Sources */,
 				50AF4C8E295409EB00FEC32B /* AccessViewController.swift in Sources */,
 				50DDA5FD297EF0070008F31A /* MatchCollectionViewCell.swift in Sources */,
@@ -491,6 +507,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		50A57EDE29ACEAF7003D7A8E /* XCRemoteSwiftPackageReference "OpenAISwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adamrushy/OpenAISwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -513,6 +537,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 502B70C72945004E008EAF52 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		50A57EDF29ACEAF7003D7A8E /* OpenAISwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50A57EDE29ACEAF7003D7A8E /* XCRemoteSwiftPackageReference "OpenAISwift" */;
+			productName = OpenAISwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
