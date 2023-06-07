@@ -24,8 +24,7 @@
 		502B70D72945302F008EAF52 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 502B70D62945302F008EAF52 /* GoogleService-Info.plist */; };
 		503FC9CE299D5EA50081F61E /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FC9CD299D5EA50081F61E /* TestViewController.swift */; };
 		50A57EE029ACEAF7003D7A8E /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 50A57EDF29ACEAF7003D7A8E /* OpenAISwift */; };
-		50A57EE229ACEB53003D7A8E /* OpenAIChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A57EE129ACEB53003D7A8E /* OpenAIChat.swift */; };
-		50A57EE429AD192B003D7A8E /* SearchChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A57EE329AD192B003D7A8E /* SearchChatViewController.swift */; };
+		50A57EE629BA1C30003D7A8E /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A57EE529BA1C30003D7A8E /* NotesViewController.swift */; };
 		50A70D232943B71B00DC96A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A70D222943B71B00DC96A2 /* AppDelegate.swift */; };
 		50A70D252943B71B00DC96A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A70D242943B71B00DC96A2 /* SceneDelegate.swift */; };
 		50A70D272943B71B00DC96A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A70D262943B71B00DC96A2 /* ViewController.swift */; };
@@ -56,8 +55,7 @@
 		502B70D429451D91008EAF52 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		502B70D62945302F008EAF52 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		503FC9CD299D5EA50081F61E /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		50A57EE129ACEB53003D7A8E /* OpenAIChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIChat.swift; sourceTree = "<group>"; };
-		50A57EE329AD192B003D7A8E /* SearchChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchChatViewController.swift; sourceTree = "<group>"; };
+		50A57EE529BA1C30003D7A8E /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		50A70D1F2943B71B00DC96A2 /* Kade-Capstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kade-Capstone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A70D222943B71B00DC96A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50A70D242943B71B00DC96A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,19 +94,35 @@
 		501707BE2945906900785A3C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				50A70D262943B71B00DC96A2 /* ViewController.swift */,
-				502B70D229451B6A008EAF52 /* SignupViewController.swift */,
-				501707BC29457B3E00785A3C /* LoginViewController.swift */,
+				50A57EE729BA2B32003D7A8E /* Start Up Controllers */,
+				50A57EE829BA2BA8003D7A8E /* Tab Bar Controllers */,
 				50128F0D2944E24D0040695C /* CreateViewController.swift */,
-				501707BF294599A600785A3C /* HomeViewController.swift */,
 				50A82197296606C700FE3850 /* UserCustomizationViewController.swift */,
 				50AF4C8D295409EB00FEC32B /* AccessViewController.swift */,
 				501CFAB32971C43C002395CD /* CrosswordViewController.swift */,
 				50DDA6002980197A0008F31A /* MatchVIewController.swift */,
 				503FC9CD299D5EA50081F61E /* TestViewController.swift */,
-				50A57EE329AD192B003D7A8E /* SearchChatViewController.swift */,
+				50A57EE529BA1C30003D7A8E /* NotesViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		50A57EE729BA2B32003D7A8E /* Start Up Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				50A70D262943B71B00DC96A2 /* ViewController.swift */,
+				502B70D229451B6A008EAF52 /* SignupViewController.swift */,
+				501707BC29457B3E00785A3C /* LoginViewController.swift */,
+			);
+			path = "Start Up Controllers";
+			sourceTree = "<group>";
+		};
+		50A57EE829BA2BA8003D7A8E /* Tab Bar Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				501707BF294599A600785A3C /* HomeViewController.swift */,
+			);
+			path = "Tab Bar Controllers";
 			sourceTree = "<group>";
 		};
 		50A70D162943B71B00DC96A2 = {
@@ -165,7 +179,6 @@
 				50A821952955064300FE3850 /* ImageDisplayed.swift */,
 				501CFAB1297084F7002395CD /* CrossWordAlgo.swift */,
 				50DDA5FE297EF0FC0008F31A /* Deck.swift */,
-				50A57EE129ACEB53003D7A8E /* OpenAIChat.swift */,
 			);
 			path = Class_Structs;
 			sourceTree = "<group>";
@@ -268,11 +281,10 @@
 				502B70D529451D92008EAF52 /* User.swift in Sources */,
 				50A821962955064300FE3850 /* ImageDisplayed.swift in Sources */,
 				501707C42946844600785A3C /* DeckCollectionViewCell.swift in Sources */,
-				50A57EE229ACEB53003D7A8E /* OpenAIChat.swift in Sources */,
 				50A70D232943B71B00DC96A2 /* AppDelegate.swift in Sources */,
 				50A70D252943B71B00DC96A2 /* SceneDelegate.swift in Sources */,
 				501CFAB2297084F7002395CD /* CrossWordAlgo.swift in Sources */,
-				50A57EE429AD192B003D7A8E /* SearchChatViewController.swift in Sources */,
+				50A57EE629BA1C30003D7A8E /* NotesViewController.swift in Sources */,
 				50128F0A2943C9E80040695C /* SetItem.swift in Sources */,
 				50AF4C8E295409EB00FEC32B /* AccessViewController.swift in Sources */,
 				50DDA5FD297EF0070008F31A /* MatchCollectionViewCell.swift in Sources */,
@@ -440,6 +452,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Caleb.Kade-Capstone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -469,6 +484,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Caleb.Kade-Capstone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
