@@ -10,16 +10,38 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
-
+import Foundation
 class CreateViewController: UIViewController {
+    
+    var deckID = " "
+    var code = " "
+    
+    
     var data:[SetItem] = []
     var count = 1
     @IBOutlet weak var deckName: UITextField!
     
+    @IBOutlet weak var shareDeckSwitch: UISwitch!
+    
     @IBOutlet weak var collectionView: UICollectionView!
-    //collectionView.widthAnchor.hashValue
+    
+    
     override func viewDidLoad() {
+
         super.viewDidLoad()
+        deckID = generateUniqueDeckID()
+        print(deckID)
+        
+        fetchSchool { [weak self] (school) in
+            if let school = school {
+                // User is enrolled in a school, handle the data
+                self?.shareDeckSwitch.isHidden = false
+            } else {
+                // User is not enrolled in a school, handle the absence of data
+                self?.shareDeckSwitch.isHidden = true
+            }
+        }
+        
         // Do any additional setup after loading the view.
         collectionView.backgroundColor = .clear
 
@@ -40,6 +62,20 @@ class CreateViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    func fetchSchool(completion: @escaping (String?) -> Void) {
+        var ref: DatabaseReference
+        ref = Database.database().reference(withPath: "users")
+        
+        // Obtains the school code if there is one
+        ref.child(ViewController.User.currentUser).child("schoolCode").observeSingleEvent(of: .value) { (snapshot) in
+            if let data = snapshot.value as? String {
+                completion(data)
+            } else {
+                completion(nil)
+            }
+        }
+    }
+
     @objc func keyboardWillShow(notification: NSNotification) {
         // Get the keyboard height and adjust the content inset of the collection view
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
@@ -81,7 +117,7 @@ class CreateViewController: UIViewController {
         
         
         
-        let ref2 = Database.database().reference(withPath: "decks/\(ViewController.User.currentUser)/\(deckName)")
+        let ref2 = Database.database().reference(withPath: "decks/\(ViewController.User.currentUser)/\(deckName)/data")
         ref2.setValue(deckTerms) { (error, ref) in
             if error != nil {
                 print("error")
@@ -90,15 +126,34 @@ class CreateViewController: UIViewController {
             }
             
         }
+        if shareDeckSwitch.isOn{
+            fetchSchool { [weak self] (school) in
+                if let school = school {
+                    // User is enrolled in a school, handle the data
+                    let ref3 = Database.database().reference(withPath: "schools/\(school)/decks/\(self!.deckID)")
+                    ref3.setValue(["creator": ViewController.User.currentUser, "title": deckName])
+                } else {
+                    // User is not enrolled in a school, handle the absence of data
+                    print("not cool")
+                    
+                }
+            }
+        }
         
         
     }
+    
     @IBAction func addItem(_ sender: Any) {
         count += 1
         let indexPath = IndexPath(row: count - 1, section: 0)
         self.collectionView.insertItems(at: [indexPath])
     
     
+    }
+    
+    func generateUniqueDeckID()->String{
+        let uuid = UUID()
+        return uuid.uuidString
     }
 
 }

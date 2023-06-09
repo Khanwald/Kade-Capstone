@@ -51,6 +51,9 @@ class HomeViewController: UIViewController {
     
     }
     
+    @IBAction func checkSchool(_ sender: Any) {
+        
+    }
     
     @IBAction func logout(_ sender: Any) {
         do {
@@ -108,7 +111,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         print("cool")
         let cell = deckCollectionView.cellForItem(at: indexPath) as! DeckCollectionViewCell
         AccessViewController.name = cell.deckNameLabel.text ?? " "
-        
+        AccessViewController.deckUser = ViewController.User.currentUser
         performSegue(withIdentifier: "terms", sender: nil)
         
 

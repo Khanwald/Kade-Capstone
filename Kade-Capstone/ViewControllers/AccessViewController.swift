@@ -11,7 +11,7 @@ class AccessViewController: UIViewController {
     
     static var name = " "
     var terms: [SetItem] = []
-    
+    static var deckUser = " "
     
     
     @IBOutlet var setLabel: UILabel!
@@ -31,7 +31,7 @@ class AccessViewController: UIViewController {
     }
     
     func setUp(){
-        let ref = Database.database().reference().child("decks").child(ViewController.User.currentUser).child(AccessViewController.name)
+        let ref = Database.database().reference().child("decks").child(AccessViewController.deckUser).child(AccessViewController.name).child("data")
         
         ref.observeSingleEvent(of: .value){ snapshot in
             print(snapshot)
@@ -46,6 +46,7 @@ class AccessViewController: UIViewController {
     
         }
     }
+    
     func layout(){
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 390, height: 120)
@@ -58,7 +59,7 @@ class AccessViewController: UIViewController {
     func data(){
         for x in terms{
             Deck.terms[x.term] = x.definition
-        }
+    }
 //        if let visibleCells = tAndD.visibleCells as? [CollectionViewCell] {
 //            visibleCells.forEach { cell in
 //                // do something with each cell

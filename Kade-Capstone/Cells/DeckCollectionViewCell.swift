@@ -11,6 +11,7 @@ class DeckCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var deckNameLabel: UILabel!
     
+    @IBOutlet weak var creatorLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         
