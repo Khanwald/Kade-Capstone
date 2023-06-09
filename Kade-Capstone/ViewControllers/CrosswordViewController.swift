@@ -16,7 +16,7 @@ class CrosswordViewController: UIViewController {
     var gridA:[[String]] = [[]]
     var best:Array<CrosswordsGenerator.Word> = Array()
     
-    
+    var max = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,12 +62,21 @@ class CrosswordViewController: UIViewController {
         
         hints.text = " "
         for word in bestResult{
+            
 
             let x = getNumberHint(row: word.row - 1, col: word.column - 1)
             if let hint = Deck.terms[word.word]{
                 hints.text! += "\(x). \(hint) "
             }
             
+        }
+        for array in gridA{
+            for letter in array{
+                if letter != "*"{
+                    max += 1
+                }
+                    
+            }
         }
         
     }
@@ -84,6 +93,7 @@ class CrosswordViewController: UIViewController {
 
     @IBAction func checkBoard(_ sender: Any) {
         if let visibleCells = grid.visibleCells as? [BlockCollectionViewCell] {
+            
             visibleCells.forEach { cell in
                 // do something with each cell
                 
@@ -97,6 +107,7 @@ class CrosswordViewController: UIViewController {
                             cell.block.backgroundColor = .orange
                             cell.block.isUserInteractionEnabled = false
                         }
+                    
                 }else{
                     cell.block.backgroundColor = .red
                     let animation = CABasicAnimation(keyPath: "position")
@@ -112,11 +123,33 @@ class CrosswordViewController: UIViewController {
                     }
                 }
                 
+                
+            }
+            var current = 0
+            visibleCells.forEach{ cell in
+                if cell.block.hasText{
+                    current += 1
+                }
+                print(max)
+                print(current)
+            }
+            
+            if current == max{
+                print("okdsf")
+                performSegue(withIdentifier: "crossToOver", sender: nil)
             }
         }
             
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "crossToOver" {
+            if let destinationVC = segue.destination as? OverViewController {
+                // Assign the string value to the destination view controller's property
+                destinationVC.points = max * 10
+                destinationVC.gamemode = "crossword"
+            }
+        }
+    }
     func getNumberHint(row:Int,col:Int)->Int{
         let size = best.count
         for count in 0...size - 1{

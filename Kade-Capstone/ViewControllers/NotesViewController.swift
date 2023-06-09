@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Firebase
 class NotesViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var selectedImage: UIImageView!
@@ -37,9 +37,33 @@ class NotesViewController: UIViewController, UIImagePickerControllerDelegate, UI
             self.sender = ViewController.User.currentUser
         }
     }
+    
+    func generateUniqueCommentStamp() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMddHHmmssSSS" // Specify the desired format for the comment stamp
+        
+        let currentDateTime = Date()
+        let commentStamp = formatter.string(from: currentDateTime)
+        
+        return commentStamp
+    }
     // Submit comment and image w/ users name
     @IBAction func sendNote(_ sender: Any) {
         print(self.sender)
+        print(selectedImage)
+        
+        let ref2 = Database.database().reference().child("decks").child(AccessViewController.deckUser).child(AccessViewController.name).child("comments").child(self.sender)
+        
+        ref2.setValue([generateUniqueCommentStamp():commentSection.text]) { (error, ref) in
+            if error != nil {
+                print("error")
+            } else {
+                print("New comment added")
+            }
+            
+        }
+        self.dismiss(animated: true, completion: nil)
+        
     }
     @IBAction func addImage(_ sender: Any) {
         

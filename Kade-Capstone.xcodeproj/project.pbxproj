@@ -25,6 +25,7 @@
 		503FC9CE299D5EA50081F61E /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FC9CD299D5EA50081F61E /* TestViewController.swift */; };
 		504EBE902A31628A0087DB79 /* OverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504EBE8F2A3162890087DB79 /* OverViewController.swift */; };
 		504EBE922A31C8D20087DB79 /* SchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504EBE912A31C8D20087DB79 /* SchoolViewController.swift */; };
+		504EBE942A336F6A0087DB79 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504EBE932A336F690087DB79 /* CommentsViewController.swift */; };
 		50A57EE029ACEAF7003D7A8E /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 50A57EDF29ACEAF7003D7A8E /* OpenAISwift */; };
 		50A57EE629BA1C30003D7A8E /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A57EE529BA1C30003D7A8E /* NotesViewController.swift */; };
 		50A70D232943B71B00DC96A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A70D222943B71B00DC96A2 /* AppDelegate.swift */; };
@@ -59,6 +60,7 @@
 		503FC9CD299D5EA50081F61E /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		504EBE8F2A3162890087DB79 /* OverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverViewController.swift; sourceTree = "<group>"; };
 		504EBE912A31C8D20087DB79 /* SchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewController.swift; sourceTree = "<group>"; };
+		504EBE932A336F690087DB79 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		50A57EE529BA1C30003D7A8E /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		50A70D1F2943B71B00DC96A2 /* Kade-Capstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kade-Capstone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A70D222943B71B00DC96A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				503FC9CD299D5EA50081F61E /* TestViewController.swift */,
 				50A57EE529BA1C30003D7A8E /* NotesViewController.swift */,
 				504EBE8F2A3162890087DB79 /* OverViewController.swift */,
+				504EBE932A336F690087DB79 /* CommentsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				502B70D529451D92008EAF52 /* User.swift in Sources */,
 				50A821962955064300FE3850 /* ImageDisplayed.swift in Sources */,
 				501707C42946844600785A3C /* DeckCollectionViewCell.swift in Sources */,
+				504EBE942A336F6A0087DB79 /* CommentsViewController.swift in Sources */,
 				50A70D232943B71B00DC96A2 /* AppDelegate.swift in Sources */,
 				50A70D252943B71B00DC96A2 /* SceneDelegate.swift in Sources */,
 				501CFAB2297084F7002395CD /* CrossWordAlgo.swift in Sources */,
