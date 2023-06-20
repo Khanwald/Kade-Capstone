@@ -54,7 +54,7 @@ class NotesViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
         let ref2 = Database.database().reference().child("decks").child(AccessViewController.deckUser).child(AccessViewController.name).child("comments").child(self.sender)
         
-        ref2.setValue([generateUniqueCommentStamp():commentSection.text]) { (error, ref) in
+        ref2.updateChildValues([generateUniqueCommentStamp():commentSection.text]) { (error, ref) in
             if error != nil {
                 print("error")
             } else {

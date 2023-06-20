@@ -23,7 +23,7 @@ class SchoolViewController: UIViewController {
         
         schoolDeckCollectionView.dataSource = self
         schoolDeckCollectionView.delegate = self
-        
+        schoolDeckCollectionView.backgroundColor = .clear
         fetchSchool { [weak self] (school) in
             if let school = school {
                 // User is enrolled in a school, handle the data

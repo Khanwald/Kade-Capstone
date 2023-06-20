@@ -21,6 +21,8 @@ class CommentsViewController: UIViewController {
         super.viewDidLoad()
         commentsCollectionView.delegate = self
         commentsCollectionView.dataSource = self
+        
+        commentsCollectionView.backgroundColor = .clear
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 350, height: 130) // Set the desired width and height of the cells
         commentsCollectionView.collectionViewLayout = layout
